@@ -34,6 +34,19 @@ public class ItemRestController {
         return rootItem;
     }
 
+    @RequestMapping(value = "/rest/item/big", method = RequestMethod.GET)
+    @ResponseBody
+    public Item big() {
+        Item bigItem = rootItem.clone();
+        for(int i = 0; i < 1000 ; i++) {
+            Item tempItem = new Item();
+            tempItem.setName("subelement" + String.valueOf(i));
+            tempItem.setComment("");
+            bigItem.getSubitems().add(tempItem);
+        }
+        return bigItem;
+    }
+
     private boolean deleteSubItem(Long id, Item item) {
         if(item.getSubitems() != null)
             for(Item tempItem : item.getSubitems()) {
