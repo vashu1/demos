@@ -1,0 +1,11 @@
+{
+    "name":"root",
+    "id":1,
+    "comment":"root element",
+    "subitems":[{
+        "name":"subelement",
+        "id":2,
+        "comment":"subelement",
+        "subitems":[]
+    }]
+}
