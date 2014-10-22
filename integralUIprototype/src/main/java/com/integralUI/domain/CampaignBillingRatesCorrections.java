@@ -1,12 +1,5 @@
 package com.integralUI.domain;
 
-/**
- * Created with IntelliJ IDEA.
- * User: ibondar
- * Date: 22/10/14
- * Time: 17:25
- * To change this template use File | Settings | File Templates.
- */
 public class CampaignBillingRatesCorrections {
     Long displayCPM = new Long(0);
     Long displayMinimum = new Long(0);

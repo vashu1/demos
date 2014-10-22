@@ -12,6 +12,13 @@
     </properties>
 
     <dependencies>
+        <!--populate bean for test purposes-->
+        <dependency>
+            <groupId>io.github.benas</groupId>
+            <artifactId>jpopulator</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
         <!--JSON handling-->
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
