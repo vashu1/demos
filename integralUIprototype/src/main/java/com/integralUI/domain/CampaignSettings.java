@@ -6,6 +6,7 @@ public class CampaignSettings {
     CampaignSettingsAdFraud adFraud;
     CampaignSettingsGeo geo;
     CampaignSettingsLanguage language;
+    CampaignSettingsRisk risk;
     CampaignSettingsSites sites;
     CampaignSettingsKeywords keywords;
 
@@ -39,6 +40,14 @@ public class CampaignSettings {
 
     public void setLanguage(CampaignSettingsLanguage language) {
         this.language = language;
+    }
+
+    public CampaignSettingsRisk getRisk() {
+        return risk;
+    }
+
+    public void setRisk(CampaignSettingsRisk risk) {
+        this.risk = risk;
     }
 
     public CampaignSettingsSites getSites() {

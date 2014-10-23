@@ -6,7 +6,7 @@ import java.util.List;
 public class Campaign {
     CampaignSetup setup;
     CampaignProduct product;
-    CampaignPartners partners;
+    List<CampaignPartner> partners = new ArrayList<CampaignPartner>();
     CampaignBilling billing;
     List<CampaignCompany> companies = new ArrayList<CampaignCompany>();
     CampaignSettings settings;
@@ -28,11 +28,11 @@ public class Campaign {
         this.product = product;
     }
 
-    public CampaignPartners getPartners() {
+    public List<CampaignPartner> getPartners() {
         return partners;
     }
 
-    public void setPartners(CampaignPartners partners) {
+    public void setPartners(List<CampaignPartner> partners) {
         this.partners = partners;
     }
 

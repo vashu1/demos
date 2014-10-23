@@ -1,0 +1,411 @@
+{
+    "setup":{
+        "name":"Unilever_Axe_Fall",
+        "description":"Some Campaign Description",
+        "product":"Axe Spray",
+        "brand":"Unilever",
+        "adserver":"ad.server.com",
+        "expected":100000000,
+        "dateStart":"08/31/2014",
+        "dateEnd":"12/31/2014",
+        "createdByName": "Jennifer Jones",
+        "createdByEmail": "jen@digitas.com",
+        "market":"Tobacco",
+        "team":[
+            {
+                "name":"John Doe",
+                "email":"john@doe.com"
+            },
+            {
+                "name":"Jane Doe",
+                "email":"jane@doe.com"
+            }
+        ],
+        "welcome":"Some Welcome Text"
+    },
+    "product":{
+        "packageName":"basic",
+        "mediaTypes":{
+            "display":true,
+            "mobile":true,
+            "videoVAST":true,
+            "videoJS":true
+        }
+    },
+    "partners":[
+        {
+            "name":"Yahoo Entertainment",
+            "address":{
+                "state":"NY",
+                "address1":"1234 Harvey Way #343",
+                "address2":"",
+                "zip":"10013",
+                "city":"New York"
+            },
+            "peoples":[
+                {
+                    "managerName":"Jen Jones",
+                    "managerEmail":"jjones@digitas.com",
+                    "managerPhone":"212-123-1234 x123",
+                    "managerAccess":false,
+                    "billingName":"Billing Name Here",
+                    "billingEmail":"billing@email.com",
+                    "billingPhone":"666-666-6666 x123",
+                    "billingAccess":true
+                },
+                {
+                    "managerName":"TmhLOyWSnW",
+                    "managerEmail":"LMvsKFbXos",
+                    "managerPhone":"rBkBkjBCwg",
+                    "managerAccess":true,
+                    "billingName":"Billing Name Here",
+                    "billingEmail":"billing@email.com",
+                    "billingPhone":"777-777-7777 x123",
+                    "billingAccess":false
+                },
+                {
+                    "managerName":"Jen Jones",
+                    "managerEmail":"jjones@digitas.com",
+                    "managerPhone":"212-123-1234 x123",
+                    "managerAccess":false,
+                    "billingName":"Billing Name Here",
+                    "billingEmail":"billing@email.com",
+                    "billingPhone":"888-888-8888 x123",
+                    "billingAccess":true
+                }
+            ]
+        },
+        {
+            "name":"Microsoft Home Cinema Studios",
+            "address":{
+                "state":"NY",
+                "address1":"1234 Harvey Way #343",
+                "address2":"",
+                "zip":"10013",
+                "city":"New York"
+            },
+            "peoples":[
+                {
+                    "managerName":"Jen Jones",
+                    "managerEmail":"jjones@digitas.com",
+                    "managerPhone":"212-123-1234 x123",
+                    "managerAccess":false,
+                    "billingName":"Billing Name Here",
+                    "billingEmail":"billing@email.com",
+                    "billingPhone":"666-666-6666 x123",
+                    "billingAccess":true
+                },
+                {
+                    "managerName":"TmhLOyWSnW",
+                    "managerEmail":"LMvsKFbXos",
+                    "managerPhone":"rBkBkjBCwg",
+                    "managerAccess":true,
+                    "billingName":"Billing Name Here",
+                    "billingEmail":"billing@email.com",
+                    "billingPhone":"777-777-7777 x123",
+                    "billingAccess":false
+                },
+                {
+                    "managerName":"Jen Jones",
+                    "managerEmail":"jjones@digitas.com",
+                    "managerPhone":"212-123-1234 x123",
+                    "managerAccess":false,
+                    "billingName":"Billing Name Here",
+                    "billingEmail":"billing@email.com",
+                    "billingPhone":"888-888-8888 x123",
+                    "billingAccess":true
+                }
+            ]
+        },
+        {
+            "name":"Novell, Novell..., inc.",
+            "address":{
+                "state":"NY",
+                "address1":"1234 Harvey Way #343",
+                "address2":"",
+                "zip":"10013",
+                "city":"New York"
+            },
+            "peoples":[
+                {
+                    "managerName":"Jen Jones",
+                    "managerEmail":"jjones@digitas.com",
+                    "managerPhone":"212-123-1234 x123",
+                    "managerAccess":false,
+                    "billingName":"Billing Name Here",
+                    "billingEmail":"billing@email.com",
+                    "billingPhone":"666-666-6666 x123",
+                    "billingAccess":true
+                },
+                {
+                    "managerName":"Jane Johnson",
+                    "managerEmail":"jjones@digitas.com",
+                    "managerPhone":"212-123-1234 x123",
+                    "managerAccess":false,
+                    "billingName":"Billing Name Here",
+                    "billingEmail":"billing@email.com",
+                    "billingPhone":"666-666-6666 x123",
+                    "billingAccess":true
+                },
+                {
+                    "managerName":"Jen Jones",
+                    "managerEmail":"jjones@digitas.com",
+                    "managerPhone":"212-123-1234 x123",
+                    "managerAccess":false,
+                    "billingName":"Billing Name Here",
+                    "billingEmail":"billing@email.com",
+                    "billingPhone":"888-888-8888 x123",
+                    "billingAccess":true
+                }
+            ]
+        },
+        {
+            "name":"Yahoo Entertainment",
+            "address":{
+                "state":"NY",
+                "address1":"1234 Harvey Way #343",
+                "address2":"",
+                "zip":"10013",
+                "city":"New York"
+            },
+            "peoples":[
+                {
+                    "managerName":"Jen Jones",
+                    "managerEmail":"jjones@digitas.com",
+                    "managerPhone":"212-123-1234 x123",
+                    "managerAccess":false,
+                    "billingName":"Billing Name Here",
+                    "billingEmail":"billing@email.com",
+                    "billingPhone":"666-666-6666 x123",
+                    "billingAccess":true
+                },
+                {
+                    "managerName":"Apple All Stars",
+                    "managerEmail":"jjones@digitas.com",
+                    "managerPhone":"212-123-1234 x123",
+                    "managerAccess":false,
+                    "billingName":"Billing Name Here",
+                    "billingEmail":"billing@email.com",
+                    "billingPhone":"666-666-6666 x123",
+                    "billingAccess":true
+                },
+                {
+                    "managerName":"Jen Jones",
+                    "managerEmail":"jjones@digitas.com",
+                    "managerPhone":"212-123-1234 x123",
+                    "managerAccess":false,
+                    "billingName":"Billing Name Here",
+                    "billingEmail":"billing@email.com",
+                    "billingPhone":"888-888-8888 x123",
+                    "billingAccess":true
+                }
+            ]
+        },
+        {
+            "name":"ThyssenChrysler AG",
+            "address":{
+                "state":"NY",
+                "address1":"1234 Harvey Way #343",
+                "address2":"",
+                "zip":"10013",
+                "city":"New York"
+            },
+            "peoples":[
+                {
+                    "managerName":"Jen Jones",
+                    "managerEmail":"jjones@digitas.com",
+                    "managerPhone":"212-123-1234 x123",
+                    "managerAccess":false,
+                    "billingName":"Billing Name Here",
+                    "billingEmail":"billing@email.com",
+                    "billingPhone":"666-666-6666 x123",
+                    "billingAccess":true
+                },
+                {
+                    "managerName":"Jane Johnson",
+                    "managerEmail":"jjones@digitas.com",
+                    "managerPhone":"212-123-1234 x123",
+                    "managerAccess":false,
+                    "billingName":"Billing Name Here",
+                    "billingEmail":"billing@email.com",
+                    "billingPhone":"666-666-6666 x123",
+                    "billingAccess":true
+                },
+                {
+                    "managerName":"Jen Jones",
+                    "managerEmail":"jjones@digitas.com",
+                    "managerPhone":"212-123-1234 x123",
+                    "managerAccess":false,
+                    "billingName":"Billing Name Here",
+                    "billingEmail":"billing@email.com",
+                    "billingPhone":"888-888-8888 x123",
+                    "billingAccess":true
+                }
+            ]
+        }
+    ],
+    "billing":{
+        "impressions":{
+            "forAll":false,
+            "customParners":[
+                {
+                    "mediaTypes":{
+                        "display":true,
+                        "mobile":false,
+                        "videoVAST":true,
+                        "videoJS":false
+                    },
+                    "company":"tbZHqkMGdN",
+                    "billCompany":false,
+                    "expectedImpressions":"ifnMsscfoe"
+                },
+                {
+                    "mediaTypes":{
+                        "display":false,
+                        "mobile":false,
+                        "videoVAST":true,
+                        "videoJS":true
+                    },
+                    "company":"oMfDwKYjwn",
+                    "billCompany":true,
+                    "expectedImpressions":"IbnncndkgK"
+                }
+            ]
+        },
+        "rates":{
+            "correct":false,
+            "corrections":{
+                "displayCPM":0.06,
+                "displayMinimum":0.06,
+                "videoJSCPM":0.06,
+                "videoJSMinimum":0.06,
+                "vastCPM":0.06,
+                "vastMinimum":0.06
+            },
+            "currencyCPM":"USD"
+        }
+    },
+    "companies":[
+        {
+            "address":{
+                "state":"pGWlPtxkbe",
+                "address1":"GSzXcMXBpZ",
+                "address2":"dHjovGYCxq",
+                "zip":"KDUyVfJDlL",
+                "city":"TQACKthhfA"
+            },
+            "name":"QZtlWdShAr",
+            "currency":"fJUlVYyqkZ",
+            "status":"QpKOubqlnM",
+            "outsideUS":false,
+            "billForVAT":true,
+            "contacts":{
+                "name":"hTBAKsoWgC",
+                "sendFax":true,
+                "sendHardCopy":true,
+                "email":"AadGwsSSto",
+                "phone":"WerVsOjFxW",
+                "fax":"sYVtgWAgwI",
+                "notes":"FDUESZyVoE",
+                "ccEmails":[
+                    "CcEmail"
+                ]
+            },
+            "displayPO":"AlQhCnHncu",
+            "displayIO":"HgwOgFjOFk",
+            "displayRFI":"hujTpfrXOj",
+            "mobilePO":"LRzrqiejVi",
+            "mobileIO":"fKuJUbHFkC",
+            "mobileRFI":"ZhAibBwvGK",
+            "videoVASTPO":"ISaDjSAzwg",
+            "videoVASTIO":"SZkBLoMGmb",
+            "videoVASTRFI":"McXUlSJjWH",
+            "videoJSPO":"PbqBBILacF",
+            "videoJSIO":"gVcDAdWERv",
+            "videoJSRFI":"wgQSzuFkGa"
+        }
+    ],
+    "settings":{
+        "language":{
+            "all":false,
+            "skip":false,
+            "custom":[
+                "en",
+                "es"
+            ]
+        },
+        "skip":false,
+        "adFraud":{
+            "skip":false,
+            "blockInvisibleTraffic":true,
+            "blockIllegalDomains":false,
+            "blockSuspiciousTraffic":true,
+            "blockAdWare":false,
+            "sambreel":false,
+            "anchorFree":false
+        },
+        "geo":{
+            "fileExists":false,
+            "skip":false,
+            "where":[
+                "US",
+                "FR",
+                "ES"
+            ]
+        },
+        "risk":{
+            "skip":false,
+            "value": 5
+        },
+        "sites":{
+            "required":[
+                "108.5.141.178",
+                "108.60.141.178",
+                "193.168.2.2",
+                "108.60.141.178",
+                "108.60.141.178",
+                "193.168.2.2",
+                "108.60.141.178",
+                "108.60.141.178",
+                "193.168.2.2"
+            ],
+            "skip":false,
+            "blacklist":[
+                "108.5.141.178",
+                "108.60.141.178",
+                "193.168.2.2",
+                "108.60.141.178",
+                "108.60.141.178",
+                "193.168.2.2",
+                "108.60.141.178",
+                "108.60.141.178",
+                "193.168.2.2"
+            ],
+            "whitelist":[
+                "108.5.141.178",
+                "108.60.141.178",
+                "193.168.2.2",
+                "108.60.141.178",
+                "108.60.141.178",
+                "193.168.2.2",
+                "108.60.141.178",
+                "108.60.141.178",
+                "193.168.2.2"
+            ]
+        },
+        "keywords":{
+            "list":[
+                "Lorem",
+                "Ipsum",
+                "Dolor",
+                "sit",
+                "Amet"
+            ],
+            "skip":false
+        }
+    },
+    "confirmation":{
+        "notes":"Some confirmation notes",
+        "confirmed":true
+    }
+}

@@ -12,6 +12,8 @@ public class CampaignSetup {
     String expected;
     String dateStart;
     String dateEnd;
+    String createdByName;
+    String createdByEmail;
     String market;
     List<CampaignSetupTeamMember> team= new ArrayList<CampaignSetupTeamMember>();
     String welcome;
@@ -78,6 +80,22 @@ public class CampaignSetup {
 
     public void setDateEnd(String dateEnd) {
         this.dateEnd = dateEnd;
+    }
+
+    public String getCreatedByName() {
+        return createdByName;
+    }
+
+    public void setCreatedByName(String createdByName) {
+        this.createdByName = createdByName;
+    }
+
+    public String getCreatedByEmail() {
+        return createdByEmail;
+    }
+
+    public void setCreatedByEmail(String createdByEmail) {
+        this.createdByEmail = createdByEmail;
     }
 
     public String getMarket() {
