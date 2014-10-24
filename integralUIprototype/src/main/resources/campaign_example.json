@@ -1,10 +1,13 @@
 {
     "setup":{
+        "authorName": "Jennifer Jones",
+        "authorEmail": "jen@digitas.com",
         "name":"Unilever_Axe_Fall",
         "description":"Some Campaign Description",
+        "agency": "Digitas",
         "product":"Axe Spray",
         "brand":"Unilever",
-        "adserver":"ad.server.com",
+        "adServer":"ad.server.com",
         "expected":100000000,
         "dateStart":"08/31/2014",
         "dateEnd":"12/31/2014",
