@@ -7,7 +7,7 @@
         "agency": "Digitas",
         "product":"Axe Spray",
         "brand":"Unilever",
-        "adServer":"ad.server.com",
+        "adserver":"ad.server.com",
         "expected":100000000,
         "dateStart":"08/31/2014",
         "dateEnd":"12/31/2014",
