@@ -14,6 +14,9 @@ public class CampaignSetup {
     String dateEnd;
     String createdByName;
     String createdByEmail;
+    String authorName;
+    String authorEmail;
+    String agency;
     String market;
     List<CampaignSetupTeamMember> team= new ArrayList<CampaignSetupTeamMember>();
     String welcome;
@@ -96,6 +99,30 @@ public class CampaignSetup {
 
     public void setCreatedByEmail(String createdByEmail) {
         this.createdByEmail = createdByEmail;
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
+    }
+
+    public String getAuthorEmail() {
+        return authorEmail;
+    }
+
+    public void setAuthorEmail(String authorEmail) {
+        this.authorEmail = authorEmail;
+    }
+
+    public String getAgency() {
+        return agency;
+    }
+
+    public void setAgency(String agency) {
+        this.agency = agency;
     }
 
     public String getMarket() {
