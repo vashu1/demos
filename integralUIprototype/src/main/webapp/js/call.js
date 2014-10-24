@@ -44,6 +44,7 @@ var CampaingDetailView = Backbone.View.extend({
 
     initialize: function () {
         console.log('Campaign Detail View has been initialized');
+
         this.render();
     },
 
@@ -54,6 +55,25 @@ var CampaingDetailView = Backbone.View.extend({
             success: function () {
                 that.$el.html( that.template( that.model.toJSON() ) );
                 $('#main').append(that.$el);
+
+                // hardcode
+                $('.pds-partners thead').on('click', function () {
+                    $(this).siblings('tbody').fadeToggle('fast');
+                    $('.toggle ',this).toggleClass('active');
+                });
+                $(".selectbox").selectbox();
+
+                $( ".x-checkbox input" ).button();
+
+                $( ".risk-radios" ).buttonset();
+
+                $("#pdssowtabs").tabs();
+
+                $('.dbd-output-title, .pds-output-title').on('click', function () {
+                    $(this).siblings('.output-wrapper').fadeToggle('slow');
+                    $(this).toggleClass('unactive');
+                });
+
                 return that;
             },
             error: function () {
@@ -65,23 +85,3 @@ var CampaingDetailView = Backbone.View.extend({
 
 var headerUserView = new HeaderUserView();
 var campaingDetailView = new CampaingDetailView();
-
-$(function () {
-    $(".selectbox").selectbox();
-
-    $( ".x-checkbox input" ).button();
-
-    $( ".risk-radios" ).buttonset();
-
-    $("#pdssowtabs").tabs();
-
-    $('.dbd-output-title, .pds-output-title').on('click', function () {
-        $(this).siblings('.output-wrapper').fadeToggle('slow');
-        $(this).toggleClass('unactive');
-    });
-
-    $('.pds-partners thead').on('click', function () {
-        $(this).siblings('tbody').fadeToggle('fast');
-        $('.toggle ',this).toggleClass('active');
-    });
-});
