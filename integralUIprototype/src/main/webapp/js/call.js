@@ -1,6 +1,6 @@
 // backbone example
 var CampaignDetailsModel = Backbone.Model.extend({
-    urlRoot: 'rest/campaign/list',
+    urlRoot: '/rest/campaign/list',
 
     initialize: function () {
         console.log('Campaing Details Model has been created');
@@ -65,19 +65,106 @@ var CampaingDetailView = Backbone.View.extend({
 
                 $( ".x-checkbox input" ).button();
 
-                $( ".risk-radios" ).buttonset();
+                // risk amount sliders
+                $("#slider-adult").slider({
+                    value: 500,
+                    min: 0,
+                    max: 1000,
+                    slide: function( event, ui ) {
+                        $( "#amount-adult" ).text(ui.value);
+                    }
+                });
+
+                $("#slider-alcohol").slider({
+                    value: 500,
+                    min: 0,
+                    max: 1000,
+                    slide: function( event, ui ) {
+                        $( "#amount-alcohol" ).text(ui.value);
+                    }
+                });
+
+                $("#slider-downloads").slider({
+                    value: 500,
+                    min: 0,
+                    max: 1000,
+                    slide: function( event, ui ) {
+                        $( "#amount-downloads" ).text(ui.value);
+                    }
+                });
+
+                $("#slider-drugs").slider({
+                    value: 500,
+                    min: 0,
+                    max: 1000,
+                    slide: function( event, ui ) {
+                        $( "#amount-drugs" ).text(ui.value);
+                    }
+                });
+
+                $("#slider-hspeech").slider({
+                    value: 500,
+                    min: 0,
+                    max: 1000,
+                    slide: function( event, ui ) {
+                        $( "#amount-hspeech" ).text(ui.value);
+                    }
+                });
+
+                $("#slider-offensive").slider({
+                    value: 500,
+                    min: 0,
+                    max: 1000,
+                    slide: function( event, ui ) {
+                        $( "#amount-offensive" ).text(ui.value);
+                    }
+                });
+
+                $("#slider-violence").slider({
+                    value: 500,
+                    min: 0,
+                    max: 1000,
+                    slide: function( event, ui ) {
+                        $( "#amount-violence" ).text(ui.value);
+                    }
+                });
+
+                $("#slider-atc").slider({
+                    value: 500,
+                    min: 0,
+                    max: 1000,
+                    slide: function( event, ui ) {
+                        $( "#amount-atc" ).text(ui.value);
+                    }
+                });
+
+                $("#slider-rsa").slider({
+                    value: 500,
+                    min: 0,
+                    max: 1000,
+                    slide: function( event, ui ) {
+                        $( "#amount-rsa" ).text(ui.value);
+                    }
+                });
 
                 $("#pdssowtabs").tabs();
+
+                $(".x-button").button();
 
                 $('.dbd-output-title, .pds-output-title').on('click', function () {
                     $(this).siblings('.output-wrapper').fadeToggle('slow');
                     $(this).toggleClass('unactive');
                 });
 
+                $('.pds-sow .toggle').on('click', function () {
+                    $(this).closest('tr').toggleClass('active');
+                });
+                // end of hardcode
+
                 return that;
             },
-            error: function () {
-                console.log('fetch error');
+            error: function (e) {
+                console.log(e);
             }
         });
     }

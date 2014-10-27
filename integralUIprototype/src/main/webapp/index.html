@@ -48,53 +48,36 @@
     <script type="text/template" id="template-campaign-detail">
         <!-- project description -->
         <div class="pds">
+            <div class="pds-actions">
+
+                <ul class="content-menu">
+                    <li><span>Make Changes</span>
+                        <ul>
+                            <li><a href="">Add Partner</a></li>
+                            <li><a href="">Change Product</a></li>
+                            <li><a href="">Change Rates</a></li>
+                            <li><a href="">Update Billing Contact</a></li>
+                        </ul>
+                    </li>
+                    <li><span>Actions</span>
+                        <ul>
+                            <li><a href="">Delete/Cancel</a></li>
+                            <li><a href="">New Program</a></li>
+                            <li><a href="">Clone</a></li>
+                            <li><a href="">Share</a></li>
+                            <li><a href="">Flag for Attention</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <h1 class="pds-title">
+                <span class="pds-title-text"><%= setup.agency %></span> <span class="spacer">&rarr;</span>
+                <span class="pds-title-text"><%= setup.brand %></span> <span class="spacer">&rarr;</span>
+                <%= setup.name %> Campaign
+                <span class="count">(17264-9)</span></h1>
+
             <div class="pds-aside pds-rightside">
-                <div class="box">
-                    <h4 class="box-title">Campaign Info</h4>
-
-                    <div class="box-wrapper">
-                        <div class="info-item">
-                            <small>Created by:</small>
-                            <p><%= setup.authorName %> ( <a href="mailto:"><%= setup.authorEmail %></a> )</p>
-                        </div>
-
-                        <div class="info-item">
-                            <small>Agency:</small>
-                            <p><%= setup.agency %></p>
-                        </div>
-
-                        <div class="info-item">
-                            <small>Brand:</small>
-                            <p><%= setup.brand %></p>
-                        </div>
-
-                        <div class="info-item">
-                            <small>Product:</small>
-                            <p><%= setup.product %></p>
-                        </div>
-
-                        <div class="info-item">
-                            <small>Expected Impressions:</small>
-                            <p><%= setup.excepted %></p>
-                        </div>
-
-                        <div class="info-item">
-                            <small>Flight Dates</small>
-                            <p><%= setup.dateStart %> - <%= setup.dateEnd %></p>
-                        </div>
-
-                        <div class="info-item">
-                            <small>Media Types:</small>
-                            <p>Display, Mobile, Video JS, Video VAST</p>
-                        </div>
-
-                        <div class="info-item">
-                            <small>Product Package:</small>
-                            <p><%= product.packageName %> ( <a href="">Upgrade</a> )</p>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="box">
                     <h4 class="box-title">Campaign Alerts <span class="count">( <a href="">32</a> )</span></h4>
 
@@ -149,575 +132,854 @@
             </div>
 
             <div class="pds-content">
-                <ul class="content-menu">
-                    <li><span>History</span></li>
-                    <li><span>Make Changes</span>
-                        <ul>
-                            <li><a href="">Add Partner</a></li>
-                            <li><a href="">Change Product</a></li>
-                            <li><a href="">Change Rates</a></li>
-                            <li><a href="">Update Billing Contact</a></li>
-                        </ul>
-                    </li>
-                    <li><span>Actions</span>
-                        <ul>
-                            <li><a href="">Delete/Cancel</a></li>
-                            <li><a href="">New Program</a></li>
-                            <li><a href="">Clone</a></li>
-                            <li><a href="">Share</a></li>
-                            <li><a href="">Flag for Attention</a></li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h1 class="pds-title"><%= setup.name %> Campaign <span class="count">(17264-9)</span> <sup>Live</sup>
-                </h1>
-
                 <div class="pds-output">
-                    <h2 class="pds-output-title">Participating Partners</h2>
+                    <h2 class="pds-output-title">Status Notifications</h2>
 
                     <div class="output-wrapper">
-                    <% _.each(partners, function(partner) { %>
-                        <table class="pds-partners">
-                            <col width="35%"/>
-                            <col width="45%"/>
-                            <col width="40%"/>
-                            <thead>
-                            <tr>
-                                <th><strong class="name"><%= partner.name %></strong></th>
-                                <th>
-                                    <%= partner.address.address1 %><br>
-                                    <%= partner.address.city %> <%= partner.address.state %> <%= partner.address.zip %><br>
-                                </th>
-                                <th colspan="2" class="pds-partners-tr"><span class="toggle"></span></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <% _.each(partner.peoples, function(people) { %>
-                            <tr>
-                                <td>
-                                    <strong class="name"><%= people.managerName %></strong><br>
-                                    <a href=""><%= people.managerEmail %></a>
-                                </td>
-                                <td>
-                                    <%= people.billingPhone %><br>
-                                    <%= people.managerPhone %>
-                                </td>
-                                <td colspan="2" class="pds-partners-tr">
-                                    <span class="pds-partners-<%= people.billingAccess ? 'yes' : 'no' %>">Billing</span><br>
-                                    <span class="pds-partners-<%= people.managerAccess ? 'yes' : 'no' %>">Allow Data Access</span>
-                                </td>
-                            </tr>
-                            <% }); %>
-                            </tbody>
-                        </table>
-                    <% }); %>
+                        <div class="x-notify x-notify-default">
+                            <div class="x-notify-body">
+                                <p>Campaign approved on 10/23/2014 by Joe Schmoe</p>
+
+                                <p>Media Partner A has not signed an SOW<b></b>
+                                Media Partner B does not have tags</p>
+                            </div>
+                        </div>
+
+                        <div class="x-notify x-notify-alert">
+                            <div class="x-notify-nav">
+                                <a class="x-button" href="">Reject</a>
+                                <a class="x-button" href="">Approve</a>
+                            </div>
+                            
+                            <div class="x-notify-body">
+                                <p><strong>Flagged</strong> by you on 10/22/2014 <a href="">Resolve</a><br>
+                                "Client has requested we expedite this campaign"</p>
+
+                                <p><strong>Campaign is going live in 3 days.</strong><br>
+                                This campaign needs approval</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="pds-output">
-                    <h2 class="pds-output-title">Billing</h2>
+                    <h2 class="pds-output-title">Details</h2>
 
                     <div class="output-wrapper">
                         <div class="x-tabs pds-tabs">
                         <div id="pdssowtabs">
                             <ul>
-                                <li><a href="#pdssowtabs-1">SOWs</a></li>
-                                <li><a href="#pdssowtabs-2">Payment Schedule</a></li>
+                                <li><a href="#pdssowtabs-1">Products and Partners</a></li>
+                                <li><a href="#pdssowtabs-2">Billing</a></li>
+                                <li><a href="#pdssowtabs-3">Settings</a></li>
+                                <li><a href="#pdssowtabs-4">Tags</a></li>
+                                <li><a href="#pdssowtabs-5">Campaign History</a></li>
                             </ul>
                             <div id="pdssowtabs-1">
-                                <table class="pds-sow">
-                                    <col width="40%"/>
+                                <h3 class="pds-subtitle"><span class="spacer">&rarr;</span> Basic Info</h3>
+
+                                <table class="pds-info">
                                     <col width="15%"/>
-                                    <col width="19%"/>
-                                    <col width="18%"/>
-                                    <col width="7%"/>
+                                    <col width="42%"/>
+                                    <col width="33%"/>
+                                    <col width="10%"/>
+                                    <tr>
+                                        <td>
+                                            <small>Campaign ID</small><br>
+                                            1726-9
+                                        </td>
+                                        <td>
+                                            <small>Campaign Name</small><br>
+                                            <%= setup.name %>
+                                        </td>
+                                        <td>
+                                            <small>Flight Dates</small><br>
+                                            <%= setup.dateStart %> - <%= setup.dateEnd %>
+                                        </td>
+                                        <td>
+                                            <small>Status</small><br>
+                                            Live
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <small>Description:</small><br>
+                                            N/A
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <table class="pds-info">
+                                    <col width="20%"/>
+                                    <col width="20%"/>
+                                    <col width="20%"/>
+                                    <col width="20%"/>
+                                    <col width="20%"/>
+                                    <tr>
+                                        <td>
+                                            <small>Team Name</small><br>
+                                            <a href="">Digitas-Unilever 2015</a>
+                                        </td>
+                                        <td>
+                                            <small>Agency</small><br>
+                                            <a href=""><%= setup.agency %></a>
+                                        </td>
+                                        <td>
+                                            <small>Brand/Advertiser</small><br>
+                                            <a href=""><%= setup.brand %></a>
+                                        </td>
+                                        <td>
+                                            <small>Ad Server</small><br>
+                                            <%= setup.adserver %>
+                                        </td>
+                                        <td>
+                                            <small>Expected Impressions</small><br>
+                                            <%= setup.excepted %>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <table class="pds-info noborder">
+                                    <col width="25%"/>
+                                    <col width="25%"/>
+                                    <col width="25%"/>
+                                    <col width="25%"/>
+                                    <tr>
+                                        <td>
+                                            <small>Agency Contact</small><br>
+                                            <a href="mailto:<%= setup.createdByEmail %>"><%= setup.createdByName %></a>
+                                        </td>
+                                        <td>
+                                            <small>Sales Lead</small><br>
+                                            <a href="">Aaron Stettner</a>
+                                        </td>
+                                        <td>
+                                            <small>Sales Office</small><br>
+                                            Chicago
+                                        </td>
+                                        <td>
+                                            <small>Client Services Rep</small><br>
+                                            <a href="">Laura Macaluso</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <small>Notes</small><br>
+                                            This campaign might be extended per agency's email. - 109/31/2014 (Brady)<br>
+                                            Campaign needs to change flight date. Please update immediately. Flagged this campaign - 11/21/2014  (Jane)
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <h3 class="pds-subtitle"><span class="spacer">&rarr;</span> Media Types and Products</h3>
+
+                                <table class="pds-info noborder">
+                                    <col width="50%"/>
+                                    <col width="50%"/>
+                                    <tr>
+                                        <td>
+                                            <small>Media Types</small><br>
+                                            sdasd
+                                        </td>
+                                        <td>
+                                            <small>Product Package</small><br>
+                                            <%= product.packageName %> ( <a href="">Upgrade</a> )
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <h3 class="pds-subtitle"><span class="spacer">&rarr;</span> Partners</h3>
+
+                                <% _.each(partners, function(partner) { %>
+                                <table class="pds-partners">
+                                    <col width="35%"/>
+                                    <col width="45%"/>
+                                    <col width="40%"/>
+                                    <thead>
+                                    <tr>
+                                        <th><strong class="name"><%= partner.name %></strong></th>
+                                        <th>
+                                            <%= partner.address.address1 %><br>
+                                            <%= partner.address.city %> <%= partner.address.state %> <%= partner.address.zip %><br>
+                                        </th>
+                                        <th colspan="2" class="pds-partners-tr"><span class="toggle"></span></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <% _.each(partner.peoples, function(people) { %>
+                                    <tr>
+                                        <td>
+                                            <strong class="name"><%= people.managerName %></strong><br>
+                                            <a href=""><%= people.managerEmail %></a>
+                                        </td>
+                                        <td>
+                                            <%= people.billingPhone %><br>
+                                            <%= people.managerPhone %>
+                                        </td>
+                                        <td colspan="2" class="pds-partners-tr">
+                                            <span class="pds-partners-<%= people.billingAccess ? 'yes' : 'no' %>">Billing</span><br>
+                                            <span class="pds-partners-<%= people.managerAccess ? 'yes' : 'no' %>">Allow Data Access</span>
+                                        </td>
+                                    </tr>
+                                    <% }); %>
+                                    </tbody>
+                                </table>
+                                <% }); %>
+                            </div>
+                            <div id="pdssowtabs-2">
+
+                                <h3 class="pds-subtitle"><span class="spacer">&rarr;</span> Billing Schedule and Rates</h3>
+
+                                <table class="pds-sow pds-billing">
+                                    <col width="25%"/>
+                                    <col width="15%"/>
+                                    <col width="15%"/>
+                                    <col width="15%"/>
+                                    <col width="15%"/>
+                                    <col width="15%"/>
+                                    <thead>
+                                    <tr>
+                                        <th>Billable Party</th>
+                                        <th>Currency</th>
+                                        <th>Display CPM</th>
+                                        <th>Mobile CPM</th>
+                                        <th>VAST CPM</th>
+                                        <th>Vid JS CPM</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="toggle">Agency: iCrossing</span>
+                                            <div class="pds-sow-more">
+                                            <p>for OwnerIQ</p>
+                                            <p>for Quantcast</p>
+                                            <p>for Rocketfuel</p>
+                                            <p>for AOL</p>
+                                            </div>
+                                        </td>
+                                        <td>$</td>
+                                        <td>
+                                            0.03
+                                            <div class="pds-sow-more">
+                                                <p>0</p>
+                                                <p>0</p>
+                                                <p>0</p>
+                                                <p>0</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            0.03
+                                            <div class="pds-sow-more">
+                                                <p>0</p>
+                                                <p>0</p>
+                                                <p>0</p>
+                                                <p>0</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            0
+                                            <div class="pds-sow-more">
+                                                <p>0.05</p>
+                                                <p>0</p>
+                                                <p>0.05</p>
+                                                <p>0.05</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            0
+                                            <div class="pds-sow-more">
+                                                <p>0.05</p>
+                                                <p>0.05</p>
+                                                <p>0.05</p>
+                                                <p>0.05</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="toggle">Agency: OwnerIQ</span></td>
+                                        <td>$</td>
+                                        <td>
+                                            0.03
+                                            <div class="pds-sow-more">
+                                                <p>0</p>
+                                                <p>0</p>
+                                                <p>0</p>
+                                                <p>0</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            0.03
+                                            <div class="pds-sow-more">
+                                                <p>0</p>
+                                                <p>0</p>
+                                                <p>0</p>
+                                                <p>0</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            0
+                                            <div class="pds-sow-more">
+                                                <p>0.05</p>
+                                                <p>0</p>
+                                                <p>0.05</p>
+                                                <p>0.05</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            0
+                                            <div class="pds-sow-more">
+                                                <p>0.05</p>
+                                                <p>0.05</p>
+                                                <p>0.05</p>
+                                                <p>0.05</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="toggle">Agency: Quantcast</span></td>
+                                        <td>$</td>
+                                        <td>
+                                            0.03
+                                            <div class="pds-sow-more">
+                                                <p>0</p>
+                                                <p>0</p>
+                                                <p>0</p>
+                                                <p>0</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            0.03
+                                            <div class="pds-sow-more">
+                                                <p>0</p>
+                                                <p>0</p>
+                                                <p>0</p>
+                                                <p>0</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            0
+                                            <div class="pds-sow-more">
+                                                <p>0.05</p>
+                                                <p>0</p>
+                                                <p>0.05</p>
+                                                <p>0.05</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            0
+                                            <div class="pds-sow-more">
+                                                <p>0.05</p>
+                                                <p>0.05</p>
+                                                <p>0.05</p>
+                                                <p>0.05</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="toggle">Agency: Rocketfuel</span></td>
+                                        <td>$</td>
+                                        <td>
+                                            0.03
+                                            <div class="pds-sow-more">
+                                                <p>0</p>
+                                                <p>0</p>
+                                                <p>0</p>
+                                                <p>0</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            0.03
+                                            <div class="pds-sow-more">
+                                                <p>0</p>
+                                                <p>0</p>
+                                                <p>0</p>
+                                                <p>0</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            0
+                                            <div class="pds-sow-more">
+                                                <p>0.05</p>
+                                                <p>0</p>
+                                                <p>0.05</p>
+                                                <p>0.05</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            0
+                                            <div class="pds-sow-more">
+                                                <p>0.05</p>
+                                                <p>0.05</p>
+                                                <p>0.05</p>
+                                                <p>0.05</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="toggle">Agency: AOL</span></td>
+                                        <td>$</td>
+                                        <td>
+                                            0.03
+                                            <div class="pds-sow-more">
+                                            <p>0</p>
+                                            <p>0</p>
+                                            <p>0</p>
+                                            <p>0</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            0.03
+                                            <div class="pds-sow-more">
+                                            <p>0</p>
+                                            <p>0</p>
+                                            <p>0</p>
+                                            <p>0</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            0
+                                            <div class="pds-sow-more">
+                                            <p>0.05</p>
+                                            <p>0</p>
+                                            <p>0.05</p>
+                                            <p>0.05</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            0
+                                            <div class="pds-sow-more">
+                                            <p>0.05</p>
+                                            <p>0.05</p>
+                                            <p>0.05</p>
+                                            <p>0.05</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                                <h3 class="pds-subtitle"><span class="spacer">&rarr;</span> Billing Addresses and Preferences</h3>
+
+                                <table class="pds-sow">
+                                    <col width="11%"/>
+                                    <col width="22%"/>
+                                    <col width="22%"/>
+                                    <col width="20%"/>
+                                    <col width="20%"/>
+                                    <col width="5%"/>
                                     <thead>
                                     <tr>
                                         <th>Company</th>
-                                        <th>SOW</th>
-                                        <th>SOW Status</th>
-                                        <th>Billing Contacts</th>
+                                        <th>Bill Contact</th>
+                                        <th>Billing Address</th>
+                                        <th>Bill Preferences</th>
+                                        <th>Ref</th>
                                         <th>&nbsp;</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td><strong class="name">Agency</strong></td>
-                                        <td><a href="">View SOW</a></td>
-                                        <td><span class="pds-sow-recieved">Received</span></td>
-                                        <td><a href="">View Billing</a></td>
-                                        <td class="pds-sow-tr">
-                                            <ul class="content-menu">
-                                                <li><span>Actions</span>
-                                                    <ul>
-                                                        <li><a href="">Delete</a></li>
-                                                        <li><a href="">New Program</a></li>
-                                                        <li><a href="">Clone</a></li>
-                                                        <li><a href="">Share</a></li>
-                                                        <li><a href="">Flag for Attention</a></li>
-                                                    </ul>
-                                                </li>
+                                        <td>
+                                            <strong class="name">iCrossing</strong><br>
+                                            <span class="status">Agency</span>
+                                        </td>
+                                        <td>
+                                            Jason Jones<br>
+                                            <a href="mailto:billing @digitas.com">billing @digitas.com</a><br>
+                                            Tel:  (212) 457-2345<br>
+                                            Fax: (212) 457-1435
+                                        </td>
+                                        <td>
+                                            Digitas Inc<br>
+                                            1234 Broadway, 11th Fl<br>
+                                            New York, NY 10012<br>
+                                            USA
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>Fax a copy</li>
+                                                <li>Bill in UK Pounds</li>
+                                                <li>Bill for VAT</li>
+                                                <li><a href="">Notes</a>  |  <a href="">CC</a></li>
                                             </ul>
                                         </td>
+                                        <td><a href="">Reference Codes</a></td>
+                                        <td><a href="">Edit</a></td>
                                     </tr>
                                     <tr>
-                                        <td><strong class="name">Acme Parter</strong></td>
-                                        <td><a href="">View SOW</a></td>
-                                        <td><span class="pds-sow-recieved">Received</span></td>
-                                        <td><a href="">View Billing</a></td>
-                                        <td class="pds-sow-tr">
-                                            <ul class="content-menu">
-                                                <li><span>Actions</span>
-                                                    <ul>
-                                                        <li><a href="">Delete</a></li>
-                                                        <li><a href="">New Program</a></li>
-                                                        <li><a href="">Clone</a></li>
-                                                        <li><a href="">Share</a></li>
-                                                        <li><a href="">Flag for Attention</a></li>
-                                                    </ul>
-                                                </li>
+                                        <td>
+                                            <strong class="name">OwnerIQ</strong><br>
+                                            <span class="status">Partner</span>
+                                        </td>
+                                        <td>
+                                            Jason Jones<br>
+                                            <a href="mailto:billing @digitas.com">billing @digitas.com</a><br>
+                                            Tel:  (212) 457-2345<br>
+                                            Fax: (212) 457-1435
+                                        </td>
+                                        <td>
+                                            Digitas Inc<br>
+                                            1234 Broadway, 11th Fl<br>
+                                            New York, NY 10012<br>
+                                            USA
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>Fax a copy</li>
+                                                <li>Bill in UK Pounds</li>
+                                                <li>Bill for VAT</li>
+                                                <li><a href="">Notes</a>  |  <a href="">CC</a></li>
                                             </ul>
                                         </td>
+                                        <td><a href="">Reference Codes</a></td>
+                                        <td><a href="">Edit</a></td>
                                     </tr>
                                     <tr>
-                                        <td><strong class="name">Media Partner 2</strong></td>
-                                        <td><a href="">View SOW</a></td>
-                                        <td><span class="pds-sow-recieved">Received</span></td>
-                                        <td><a href="">View Billing</a></td>
-                                        <td class="pds-sow-tr">
-                                            <ul class="content-menu">
-                                                <li><span>Actions</span>
-                                                    <ul>
-                                                        <li><a href="">Delete</a></li>
-                                                        <li><a href="">New Program</a></li>
-                                                        <li><a href="">Clone</a></li>
-                                                        <li><a href="">Share</a></li>
-                                                        <li><a href="">Flag for Attention</a></li>
-                                                    </ul>
-                                                </li>
+                                        <td>
+                                            <strong class="name">Quantcast</strong><br>
+                                            <span class="status">Partner</span>
+                                        </td>
+                                        <td>
+                                            Jason Jones<br>
+                                            <a href="mailto:billing @digitas.com">billing @digitas.com</a><br>
+                                            Tel:  (212) 457-2345<br>
+                                            Fax: (212) 457-1435
+                                        </td>
+                                        <td>
+                                            Digitas Inc<br>
+                                            1234 Broadway, 11th Fl<br>
+                                            New York, NY 10012<br>
+                                            USA
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>Fax a copy</li>
+                                                <li>Bill in UK Pounds</li>
+                                                <li>Bill for VAT</li>
+                                                <li><a href="">Notes</a>  |  <a href="">CC</a></li>
                                             </ul>
                                         </td>
+                                        <td><a href="">Reference Codes</a></td>
+                                        <td><a href="">Edit</a></td>
                                     </tr>
                                     <tr>
-                                        <td><strong class="name">Media Partner 3</strong></td>
-                                        <td><a href="">View SOW</a></td>
-                                        <td><span class="pds-sow-recieved">Received</span></td>
-                                        <td><a href="">View Billing</a></td>
-                                        <td class="pds-sow-tr">
-                                            <ul class="content-menu">
-                                                <li><span>Actions</span>
-                                                    <ul>
-                                                        <li><a href="">Delete</a></li>
-                                                        <li><a href="">New Program</a></li>
-                                                        <li><a href="">Clone</a></li>
-                                                        <li><a href="">Share</a></li>
-                                                        <li><a href="">Flag for Attention</a></li>
-                                                    </ul>
-                                                </li>
+                                        <td>
+                                            <strong class="name">Rocketfuel</strong><br>
+                                            <span class="status">Partner</span>
+                                        </td>
+                                        <td>
+                                            Jason Jones<br>
+                                            <a href="mailto:billing @digitas.com">billing @digitas.com</a><br>
+                                            Tel:  (212) 457-2345<br>
+                                            Fax: (212) 457-1435
+                                        </td>
+                                        <td>
+                                            Digitas Inc<br>
+                                            1234 Broadway, 11th Fl<br>
+                                            New York, NY 10012<br>
+                                            USA
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>Fax a copy</li>
+                                                <li>Bill in UK Pounds</li>
+                                                <li>Bill for VAT</li>
+                                                <li><a href="">Notes</a>  |  <a href="">CC</a></li>
                                             </ul>
                                         </td>
+                                        <td><a href="">Reference Codes</a></td>
+                                        <td><a href="">Edit</a></td>
                                     </tr>
                                     <tr>
-                                        <td><strong class="name">Media Partner 4</strong></td>
-                                        <td><a href="">View SOW</a></td>
-                                        <td><span class="pds-sow-recieved">Received</span></td>
-                                        <td><a href="">View Billing</a></td>
-                                        <td class="pds-sow-tr">
-                                            <ul class="content-menu">
-                                                <li><span>Actions</span>
-                                                    <ul>
-                                                        <li><a href="">Delete</a></li>
-                                                        <li><a href="">New Program</a></li>
-                                                        <li><a href="">Clone</a></li>
-                                                        <li><a href="">Share</a></li>
-                                                        <li><a href="">Flag for Attention</a></li>
-                                                    </ul>
-                                                </li>
+                                        <td>
+                                            <strong class="name">AOL</strong><br>
+                                            <span class="status">Partner</span>
+                                        </td>
+                                        <td>
+                                            Jason Jones<br>
+                                            <a href="mailto:billing @digitas.com">billing @digitas.com</a><br>
+                                            Tel:  (212) 457-2345<br>
+                                            Fax: (212) 457-1435
+                                        </td>
+                                        <td>
+                                            Digitas Inc<br>
+                                            1234 Broadway, 11th Fl<br>
+                                            New York, NY 10012<br>
+                                            USA
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>Fax a copy</li>
+                                                <li>Bill in UK Pounds</li>
+                                                <li>Bill for VAT</li>
+                                                <li><a href="">Notes</a>  |  <a href="">CC</a></li>
                                             </ul>
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong class="name">Media Partner 5</strong></td>
-                                        <td><a href="">View SOW</a></td>
-                                        <td><span class="pds-sow-recieved">Received</span></td>
-                                        <td><a href="">View Billing</a></td>
-                                        <td class="pds-sow-tr">
-                                            <ul class="content-menu">
-                                                <li><span>Actions</span>
-                                                    <ul>
-                                                        <li><a href="">Delete</a></li>
-                                                        <li><a href="">New Program</a></li>
-                                                        <li><a href="">Clone</a></li>
-                                                        <li><a href="">Share</a></li>
-                                                        <li><a href="">Flag for Attention</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong class="name">Media Partner 6</strong></td>
-                                        <td><a href="">View SOW</a></td>
-                                        <td><span class="pds-sow-recieved">Received</span></td>
-                                        <td><a href="">View Billing</a></td>
-                                        <td class="pds-sow-tr">
-                                            <ul class="content-menu">
-                                                <li><span>Actions</span>
-                                                    <ul>
-                                                        <li><a href="">Delete</a></li>
-                                                        <li><a href="">New Program</a></li>
-                                                        <li><a href="">Clone</a></li>
-                                                        <li><a href="">Share</a></li>
-                                                        <li><a href="">Flag for Attention</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong class="name">Media Partner 1</strong></td>
-                                        <td><a href="">View SOW</a></td>
-                                        <td><span class="pds-sow-recieved">Received</span></td>
-                                        <td><a href="">View Billing</a></td>
-                                        <td class="pds-sow-tr">
-                                            <ul class="content-menu">
-                                                <li><span>Actions</span>
-                                                    <ul>
-                                                        <li><a href="">Delete</a></li>
-                                                        <li><a href="">New Program</a></li>
-                                                        <li><a href="">Clone</a></li>
-                                                        <li><a href="">Share</a></li>
-                                                        <li><a href="">Flag for Attention</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong class="name">Media Partner 2</strong></td>
-                                        <td><a href="">View SOW</a></td>
-                                        <td><span class="pds-sow-pending">Pending</span></td>
-                                        <td><a href="">View Billing</a></td>
-                                        <td class="pds-sow-tr">
-                                            <ul class="content-menu">
-                                                <li><span>Actions</span>
-                                                    <ul>
-                                                        <li><a href="">Delete</a></li>
-                                                        <li><a href="">New Program</a></li>
-                                                        <li><a href="">Clone</a></li>
-                                                        <li><a href="">Share</a></li>
-                                                        <li><a href="">Flag for Attention</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong class="name">Media Partner 3</strong></td>
-                                        <td><a href="">View SOW</a></td>
-                                        <td><span class="pds-sow-recieved">Received</span></td>
-                                        <td><a href="">View Billing</a></td>
-                                        <td class="pds-sow-tr">
-                                            <ul class="content-menu">
-                                                <li><span>Actions</span>
-                                                    <ul>
-                                                        <li><a href="">Delete</a></li>
-                                                        <li><a href="">New Program</a></li>
-                                                        <li><a href="">Clone</a></li>
-                                                        <li><a href="">Share</a></li>
-                                                        <li><a href="">Flag for Attention</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong class="name">Media Partner 4</strong></td>
-                                        <td><a href="">View SOW</a></td>
-                                        <td><span class="pds-sow-recieved">Received</span></td>
-                                        <td><a href="">View Billing</a></td>
-                                        <td class="pds-sow-tr">
-                                            <ul class="content-menu">
-                                                <li><span>Actions</span>
-                                                    <ul>
-                                                        <li><a href="">Delete</a></li>
-                                                        <li><a href="">New Program</a></li>
-                                                        <li><a href="">Clone</a></li>
-                                                        <li><a href="">Share</a></li>
-                                                        <li><a href="">Flag for Attention</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong class="name">Media Partner 5</strong></td>
-                                        <td><a href="">View SOW</a></td>
-                                        <td><a href="">Send SOW</a></td>
-                                        <td><a href="">View Billing</a></td>
-                                        <td class="pds-sow-tr">
-                                            <ul class="content-menu">
-                                                <li><span>Actions</span>
-                                                    <ul>
-                                                        <li><a href="">Delete</a></li>
-                                                        <li><a href="">New Program</a></li>
-                                                        <li><a href="">Clone</a></li>
-                                                        <li><a href="">Share</a></li>
-                                                        <li><a href="">Flag for Attention</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong class="name">Media Partner 6</strong></td>
-                                        <td><a href="">View SOW</a></td>
-                                        <td><span class="pds-sow-recieved">Received</span></td>
-                                        <td><a href="">View Billing</a></td>
-                                        <td class="pds-sow-tr">
-                                            <ul class="content-menu">
-                                                <li><span>Actions</span>
-                                                    <ul>
-                                                        <li><a href="">Delete</a></li>
-                                                        <li><a href="">New Program</a></li>
-                                                        <li><a href="">Clone</a></li>
-                                                        <li><a href="">Share</a></li>
-                                                        <li><a href="">Flag for Attention</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong class="name">Media Partner 2</strong></td>
-                                        <td><a href="">View SOW</a></td>
-                                        <td><span class="pds-sow-recieved">Received</span></td>
-                                        <td><a href="">View Billing</a></td>
-                                        <td class="pds-sow-tr">
-                                            <ul class="content-menu">
-                                                <li><span>Actions</span>
-                                                    <ul>
-                                                        <li><a href="">Delete</a></li>
-                                                        <li><a href="">New Program</a></li>
-                                                        <li><a href="">Clone</a></li>
-                                                        <li><a href="">Share</a></li>
-                                                        <li><a href="">Flag for Attention</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong class="name">Media Partner 3</strong></td>
-                                        <td><a href="">View SOW</a></td>
-                                        <td><span class="pds-sow-recieved">Received</span></td>
-                                        <td><a href="">View Billing</a></td>
-                                        <td class="pds-sow-tr">
-                                            <ul class="content-menu">
-                                                <li><span>Actions</span>
-                                                    <ul>
-                                                        <li><a href="">Delete</a></li>
-                                                        <li><a href="">New Program</a></li>
-                                                        <li><a href="">Clone</a></li>
-                                                        <li><a href="">Share</a></li>
-                                                        <li><a href="">Flag for Attention</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong class="name">Media Partner 4</strong></td>
-                                        <td><a href="">View SOW</a></td>
-                                        <td><span class="pds-sow-recieved">Received</span></td>
-                                        <td><a href="">View Billing</a></td>
-                                        <td class="pds-sow-tr">
-                                            <ul class="content-menu">
-                                                <li><span>Actions</span>
-                                                    <ul>
-                                                        <li><a href="">Delete</a></li>
-                                                        <li><a href="">New Program</a></li>
-                                                        <li><a href="">Clone</a></li>
-                                                        <li><a href="">Share</a></li>
-                                                        <li><a href="">Flag for Attention</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong class="name">Media Partner 5</strong></td>
-                                        <td><a href="">View SOW</a></td>
-                                        <td><span class="pds-sow-recieved">Received</span></td>
-                                        <td><a href="">View Billing</a></td>
-                                        <td class="pds-sow-tr">
-                                            <ul class="content-menu">
-                                                <li><span>Actions</span>
-                                                    <ul>
-                                                        <li><a href="">Delete</a></li>
-                                                        <li><a href="">New Program</a></li>
-                                                        <li><a href="">Clone</a></li>
-                                                        <li><a href="">Share</a></li>
-                                                        <li><a href="">Flag for Attention</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong class="name">Media Partner 16</strong></td>
-                                        <td><a href="">View SOW</a></td>
-                                        <td><span class="pds-sow-recieved">Received</span></td>
-                                        <td><a href="">View Billing</a></td>
-                                        <td class="pds-sow-tr">
-                                            <ul class="content-menu">
-                                                <li><span>Actions</span>
-                                                    <ul>
-                                                        <li><a href="">Delete</a></li>
-                                                        <li><a href="">New Program</a></li>
-                                                        <li><a href="">Clone</a></li>
-                                                        <li><a href="">Share</a></li>
-                                                        <li><a href="">Flag for Attention</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </td>
+                                        <td><a href="">Reference Codes</a></td>
+                                        <td><a href="">Edit</a></td>
                                     </tr>
                                     </tbody>
                                 </table>
+
+                                <div class="pds-sow-submenu">
+                                    <ul class="content-menu">
+                                        <li><span>Actions</span>
+                                            <ul>
+                                                <li><a href="">View</a></li>
+                                                <li><a href="">Mark as Signed</a></li>
+                                                <li><a href="">Send to Partner</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <h3 class="pds-subtitle"><span class="spacer">&rarr;</span> Statements of Work</h3>
+
+                                <table class="pds-sow pds-statements">
+                                <col width="5%"/>
+                                <col width="25%"/>
+                                <col width="25%"/>
+                                <col width="20%"/>
+                                <col width="20%"/>
+                                <col width="5%"/>
+                                <thead>
+                                <tr>
+                                    <th><span class="x-checkbox"><input type="checkbox" id="sow-check-0"><label for="sow-check-0">&nbsp;</label></span></th>
+                                    <th>Company</th>
+                                    <th>Partner</th>
+                                    <th>SOW Status</th>
+                                    <th>Status Date</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><span class="x-checkbox"><input type="checkbox" id="sow-check-1"><label for="sow-check-1">&nbsp;</label></span></td>
+                                    <td><a href="">Owner IQ_SOW</a></td>
+                                    <td>OwnerIQ</td>
+                                    <td><span class="pds-sow-rejected">Rejected</span></td>
+                                    <td>01/23/2014</td>
+                                    <td class="pds-sow-tr"><a href="">Mark</a></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="x-checkbox"><input type="checkbox" id="sow-check-2"><label for="sow-check-2">&nbsp;</label></span></td>
+                                    <td><a href="">Owner IQ_SOW</a></td>
+                                    <td>OwnerIQ</td>
+                                    <td><span class="pds-sow-recieved">Rejected</span></td>
+                                    <td>01/23/2014</td>
+                                    <td class="pds-sow-tr">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="x-checkbox"><input type="checkbox" id="sow-check-3"><label for="sow-check-3">&nbsp;</label></span></td>
+                                    <td><a href="">Quantcast_ SOW</a></td>
+                                    <td>Quantcast</td>
+                                    <td><span class="pds-sow-recieved">Needs Signature</span></td>
+                                    <td>01/23/2014</td>
+                                    <td class="pds-sow-tr">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="x-checkbox"><input type="checkbox" id="sow-check-4"><label for="sow-check-4">&nbsp;</label></span></td>
+                                    <td><a href="">AOL_ SOW</a></td>
+                                    <td>AOL</td>
+                                    <td><span class="pds-sow-recieved"><a href="">Send to Partner</a></span></td>
+                                    <td>01/23/2014</td>
+                                    <td class="pds-sow-tr">&nbsp;</td>
+                                </tr>
+                                </tbody>
+                                </table>
                             </div>
-                            <div id="pdssowtabs-2">
+                            <div id="pdssowtabs-3">
+                                <table class="pds-keywords">
+                                    <col width="33%"/>
+                                    <col width="33%"/>
+                                    <col width="33%"/>
+                                    <tr>
+                                        <td colspan="2">
+                                            <fieldset>
+                                                <legend>Brand Safety Risk Thresholds</legend>
+                                                <div class="box-wrapper">
+                                                    <table class="pds-risk">
+                                                        <col width="37%"/>
+                                                        <col width="63%"/>
+                                                        <tr>
+                                                            <td class="label">Adult <span class="count">(<span id="amount-adult">500</span>)</span></td>
+                                                            <td>
+                                                                <div class="x-slider">
+                                                                    <div id="slider-adult"></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="label">Alcohol <span class="count">(<span id="amount-alcohol">500</span>)</span></td>
+                                                            <td>
+                                                                <div class="x-slider">
+                                                                    <div id="slider-alcohol"></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="label">Illegal Downloads <span class="count">(<span id="amount-downloads">500</span>)</span></td>
+                                                            <td>
+                                                                <div class="x-slider">
+                                                                    <div id="slider-downloads"></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="label">Illegal Drugs <span class="count">(<span id="amount-drugs">500</span>)</span></td>
+                                                            <td>
+                                                                <div class="x-slider">
+                                                                    <div id="slider-drugs"></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="label">Hate Speech <span class="count">(<span id="amount-hspeech">500</span>)</span></td>
+                                                            <td>
+                                                                <div class="x-slider">
+                                                                    <div id="slider-hspeech"></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="label">Offensive Language <span class="count">(<span id="amount-offensive">500</span>)</span></td>
+                                                            <td>
+                                                                <div class="x-slider">
+                                                                    <div id="slider-offensive"></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="label">Violence <span class="count">(<span id="amount-violence">500</span>)</span></td>
+                                                            <td>
+                                                                <div class="x-slider">
+                                                                    <div id="slider-violence"></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="label">Adsafe Test Category <span class="count">(<span id="amount-atc">500</span>)</span></td>
+                                                            <td>
+                                                                <div class="x-slider">
+                                                                    <div id="slider-atc"></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="label">RSA <span class="count">(<span id="amount-rsa">500</span>)</span></td>
+                                                            <td>
+                                                                <div class="x-slider">
+                                                                    <div id="slider-rsa"></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </fieldset>
+
+                                            <div class="x-spacer"></div>
+
+                                            <fieldset>
+                                                <legend>Ad Fraud Blocking</legend>
+                                                <div class="box-wrapper">
+                                                    <span class="x-checkbox"><input type="checkbox" id="x-check-1" <%= settings.adFraud.blockInvisibleTraffic ? 'checked="checked"' : '' %>><label for="x-check-1">Block Invisible traffic</label></span><br>
+                                                    <span class="x-checkbox"><input type="checkbox" id="x-check-2" <%= settings.adFraud.blockIllegalDomains ? 'checked="checked"' : '' %>><label for="x-check-2">Block domains on Integral's Illegal Download Sites list</label></span><br>
+                                                    <span class="x-checkbox"><input type="checkbox" id="x-check-3" <%= settings.adFraud.blockSuspiciousTraffic ? 'checked="checked"' : '' %>><label for="x-check-3">Block suspicious traffic</label></span><br>
+                                                    <span class="x-checkbox"><input type="checkbox" id="x-check-4" <%= settings.adFraud.blockAdWare ? 'checked="checked"' : '' %>><label for="x-check-4">Block Adware: Sambreel, AnchorFree</label></span>
+                                                </div>
+                                            </fieldset>
+                                        </td>
+                                        <td>
+                                            <fieldset>
+                                                <legend>Geo Compliance</legend>
+                                                <div class="box-wrapper">
+                                                    Only allow impressions in the following DMAs:<br>
+                                                    <br>
+                                                    <ul>
+                                                        <% _.each(settings.geo.where, function(key) { %><%= key ? '<li>' + key + '</li>' : 'None' %><% }); %>
+                                                    </ul>
+                                                </div>
+                                            </fieldset>
+
+                                            <div class="x-spacer"></div>
+
+                                            <fieldset>
+                                                <legend>Language Targeting</legend>
+                                                <div class="box-wrapper">
+                                                    <ul>
+                                                        <li>Spanish</li>
+                                                        <li>English</li>
+                                                    </ul>
+                                                </div>
+                                            </fieldset>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" class="pds-keywords-title">Keyword Settings:</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <fieldset>
+                                                <legend>Keyword Segment</legend>
+                                                <div class="box-wrapper">
+                                                    <textarea name="" id="" cols="" rows="" placeholder="Please Enter Keywords..."><% _.each(settings.keywords.list, function(key) { %><%= key + ', ' %><% }); %></textarea>
+                                                </div>
+                                            </fieldset>
+                                        </td>
+                                        <td>
+                                            <fieldset>
+                                                <legend>Preview IP Address List</legend>
+                                                <div class="box-wrapper">
+
+                                                    <textarea name="" id="" cols="" rows="" placeholder="Please Enter IP(s)..."><% _.each(settings.sites.blacklist, function(key) { %><%= key %>
+<% }); %></textarea>
+                                                </div>
+                                            </fieldset>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" class="pds-keywords-title">Custom Lists:</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <fieldset>
+                                                <legend>Blocked <span class="count">(223 URLs)</span></legend>
+                                                <div class="box-wrapper">
+                                                    <textarea name="" id="" cols="" rows="" placeholder="Please Enter IP(s)..."><% _.each(settings.sites.blacklist, function(key) { %><%= key %>
+<% }); %></textarea>
+                                                </div>
+                                            </fieldset>
+                                        </td>
+                                        <td>
+                                            <fieldset>
+                                                <legend>Trusted <span class="count">(1,676 URLs)</span></legend>
+                                                <div class="box-wrapper">
+                                                    <textarea name="" id="" cols="" rows="" placeholder="Please Enter IP(s)..."><% _.each(settings.sites.whitelist, function(key) { %><%= key %>
+<% }); %></textarea>
+                                                </div>
+                                            </fieldset>
+                                        </td>
+                                        <td>
+                                            <fieldset>
+                                                <legend>Required <span class="count">(2,543 URLs)</span></legend>
+                                                <div class="box-wrapper">
+                                                    <textarea name="" id="" cols="" rows="" placeholder="Please Enter IP(s)..."><% _.each(settings.sites.required, function(key) { %><%= key %>
+<% }); %></textarea>
+                                                </div>
+                                            </fieldset>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div id="pdssowtabs-4">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci amet culpa eius, incidunt laudantium maxime modi molestiae necessitatibus omnis provident qui sunt suscipit? Alias aliquid amet assumenda atque culpa ea est et eum fugiat laboriosam molestias nam natus neque nesciunt, nisi omnis pariatur quaerat quia quidem reprehenderit vero voluptas!</p>
+                            </div>
+                            <div id="pdssowtabs-5">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci amet culpa eius, incidunt laudantium maxime modi molestiae necessitatibus omnis provident qui sunt suscipit? Alias aliquid amet assumenda atque culpa ea est et eum fugiat laboriosam molestias nam natus neque nesciunt, nisi omnis pariatur quaerat quia quidem reprehenderit vero voluptas!</p>
                             </div>
                         </div>
                     </div>
-                    </div>
-                </div>
-
-                <div class="pds-output">
-                    <h2 class="pds-output-title">Settings</h2>
-
-                    <div class="output-wrapper">
-                        <table class="pds-keywords">
-                            <col width="33%"/>
-                            <col width="33%"/>
-                            <col width="33%"/>
-                            <tr>
-                                <td colspan="3" class="pds-keywords-title">Basic Settings:</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <fieldset>
-                                        <legend>Brand Safety Risk Thresholds</legend>
-                                        <div class="box-wrapper">
-                                            <div class="risk-radios">
-                                                <input <%= settings.risk.value === 0 ? 'checked="checked"' : '' %> type="radio" id="risk-radio-1" name="risk-radio"><label for="risk-radio-1"><span class="x" style="background: #dbf6e0"></span></label>
-                                                <input <%= settings.risk.value === 1 ? 'checked="checked"' : '' %> type="radio" id="risk-radio-2" name="risk-radio" checked="checked"><label for="risk-radio-2"><span class="x" style="background: #97ECB1"></span></label>
-                                                <input <%= settings.risk.value === 2 ? 'checked="checked"' : '' %> type="radio" id="risk-radio-3" name="risk-radio"><label for="risk-radio-3"><span class="x" style="background: #77cc91"></span></label>
-                                                <input <%= settings.risk.value === 3 ? 'checked="checked"' : '' %> type="radio" id="risk-radio-4" name="risk-radio"><label for="risk-radio-4"><span class="x" style="background: rgba(255, 252, 211, 0.66)"></span></label>
-                                                <input <%= settings.risk.value === 4 ? 'checked="checked"' : '' %> type="radio" id="risk-radio-5" name="risk-radio"><label for="risk-radio-5"><span class="x" style="background: #ffefad"></span></label>
-                                                <input <%= settings.risk.value === 5 ? 'checked="checked"' : '' %> type="radio" id="risk-radio-6" name="risk-radio"><label for="risk-radio-6"><span class="x" style="background: #ffeb33"></span></label>
-                                                <input <%= settings.risk.value === 6 ? 'checked="checked"' : '' %> type="radio" id="risk-radio-7" name="risk-radio"><label for="risk-radio-7"><span class="x" style="background: #ffebdf"></span></label>
-                                                <input <%= settings.risk.value === 7 ? 'checked="checked"' : '' %> type="radio" id="risk-radio-8" name="risk-radio"><label for="risk-radio-8"><span class="x" style="background: #ffc8a0"></span></label>
-                                                <input <%= settings.risk.value === 8 ? 'checked="checked"' : '' %> type="radio" id="risk-radio-9" name="risk-radio"><label for="risk-radio-9"><span class="x" style="background: #ff9a3f"></span></label>
-                                            </div>
-                                        </div>
-                                    </fieldset>
-
-                                    <div class="x-spacer"></div>
-
-                                    <fieldset>
-                                        <legend>Ad Fraud Blocking</legend>
-                                        <div class="box-wrapper">
-                                            <span class="x-checkbox"><input type="checkbox" id="x-check-1" <%= settings.adFraud.blockInvisibleTraffic ? 'checked="checked"' : '' %>><label for="x-check-1">Block Invisible traffic</label></span><br>
-                                            <span class="x-checkbox"><input type="checkbox" id="x-check-2" <%= settings.adFraud.blockIllegalDomains ? 'checked="checked"' : '' %>><label for="x-check-2">Block domains on Integral's Illegal Download Sites list</label></span><br>
-                                            <span class="x-checkbox"><input type="checkbox" id="x-check-3" <%= settings.adFraud.blockSuspiciousTraffic ? 'checked="checked"' : '' %>><label for="x-check-3">Block suspicious traffic</label></span><br>
-                                            <span class="x-checkbox"><input type="checkbox" id="x-check-4" <%= settings.adFraud.blockAdWare ? 'checked="checked"' : '' %>><label for="x-check-4">Block Adware: Sambreel, AnchorFree</label></span>
-                                        </div>
-                                    </fieldset>
-                                </td>
-                                <td>
-                                    <fieldset>
-                                        <legend><a href="">Geo Compliance</a></legend>
-                                        <div class="box-wrapper">
-                                            <ul>
-                                                <% _.each(settings.geo.where, function(key) { %><%= key ? '<li>' + key + '</li>' : 'nothing' %><% }); %>
-                                                <li><a href="">Show All</a></li>
-                                            </ul>
-                                        </div>
-                                    </fieldset>
-
-                                    <div class="x-spacer"></div>
-
-                                    <fieldset>
-                                        <legend><a href="">Only show on pages in</a></legend>
-                                        <div class="box-wrapper">
-                                            <ul>
-                                                <li>Spanish</li>
-                                                <li>English</li>
-                                            </ul>
-                                        </div>
-                                    </fieldset>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="3" class="pds-keywords-title">Keyword Settings:</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <fieldset>
-                                        <legend>Keyword Segment</legend>
-                                        <div class="box-wrapper">
-                                            <textarea name="" id="" cols="" rows="" placeholder="Please Enter Keywords..."><% _.each(settings.keywords.list, function(key) { %><%= key %>
-<% }); %></textarea>
-                                        </div>
-                                    </fieldset>
-                                </td>
-                                <td>
-                                    <fieldset>
-                                        <legend>Preview IP Address List</legend>
-                                        <div class="box-wrapper">
-
-                                            <textarea name="" id="" cols="" rows="" placeholder="Please Enter IP(s)..."><% _.each(settings.sites.blacklist, function(key) { %><%= key %>
-<% }); %></textarea>
-                                        </div>
-                                    </fieldset>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="3" class="pds-keywords-title">Custom Lists:</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <fieldset>
-                                        <legend>Blocked</legend>
-                                        <div class="box-wrapper">
-                                            <textarea name="" id="" cols="" rows="" placeholder="Please Enter IP(s)..."><% _.each(settings.sites.blacklist, function(key) { %><%= key %>
-<% }); %></textarea>
-                                        </div>
-                                    </fieldset>
-                                </td>
-                                <td>
-                                    <fieldset>
-                                        <legend>Trusted</legend>
-                                        <div class="box-wrapper">
-                                            <textarea name="" id="" cols="" rows="" placeholder="Please Enter IP(s)..."><% _.each(settings.sites.whitelist, function(key) { %><%= key %>
-<% }); %></textarea>
-                                        </div>
-                                    </fieldset>
-                                </td>
-                                <td>
-                                    <fieldset>
-                                        <legend>Required</legend>
-                                        <div class="box-wrapper">
-                                            <textarea name="" id="" cols="" rows="" placeholder="Please Enter IP(s)..."><% _.each(settings.sites.required, function(key) { %><%= key %>
-<% }); %></textarea>
-                                        </div>
-                                    </fieldset>
-                                </td>
-                            </tr>
-                        </table>
                     </div>
                 </div>
             </div>
