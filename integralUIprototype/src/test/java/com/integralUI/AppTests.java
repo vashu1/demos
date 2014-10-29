@@ -32,6 +32,8 @@ public class AppTests {
 
     @Test
     public void simple() throws Exception {
+        CampaignController campaignController = new CampaignController();
+        campaignController.testCampaign();
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("hello"));

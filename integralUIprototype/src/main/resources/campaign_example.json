@@ -1,30 +1,32 @@
 {
     "setup":{
-        "authorName": "Jennifer Jones",
-        "authorEmail": "jen@digitas.com",
-        "name":"Unilever_Axe_Fall",
-        "description":"Some Campaign Description",
-        "agency": "Digitas",
-        "product":"Axe Spray",
-        "brand":"Unilever",
-        "adserver":"ad.server.com",
+        "campaign": {
+            "id": "1276-9",
+            "name": "Unilever_Axe_Fall",
+            "status": 1,
+            "description": "N/A"
+        },
+        "notes": "",
+        "teamName": "Digitas-Unilever 2015",
+        "brandName":"Unilever",
+        "adServer":"ad.server.com",
         "expected":100000000,
+        "agency": {
+            "name": "Digitas",
+            "contactName": "Jennifer Jones",
+            "contectEmail": "jen@digitas.com"
+        },
+        "sales": {
+            "leadName": "Aaron Stettner",
+            "leadEmail": "aaron@mail.com",
+            "office": "Chicago"
+        },
+        "csr": {
+            "name": "Laura Macaluso",
+            "email": "laura@mail.com"
+        },
         "dateStart":"08/31/2014",
-        "dateEnd":"12/31/2014",
-        "createdByName": "Jennifer Jones",
-        "createdByEmail": "jen@digitas.com",
-        "market":"Tobacco",
-        "team":[
-            {
-                "name":"John Doe",
-                "email":"john@doe.com"
-            },
-            {
-                "name":"Jane Doe",
-                "email":"jane@doe.com"
-            }
-        ],
-        "welcome":"Some Welcome Text"
+        "dateEnd":"12/31/2014"
     },
     "product":{
         "packageName":"basic",
@@ -248,108 +250,124 @@
         }
     ],
     "billing":{
-        "impressions":{
-            "forAll":false,
-            "customParners":[
-                {
-                    "mediaTypes":{
-                        "display":true,
-                        "mobile":false,
-                        "videoVAST":true,
-                        "videoJS":false
+        "rates": [
+            {
+                "name": "iCrossing",
+                "currency": "USD",
+                "displayCPM": 0.03,
+                "mobileCPM": 0.03,
+                "vastCPM": 0,
+                "vidJsCPM": 0,
+                "additional": [
+                    {
+                        "name": "OwnerIQ",
+                        "currency": "USD",
+                        "displayCPM": 0,
+                        "mobileCPM": 0,
+                        "vastCPM": 0.05,
+                        "vidJsCPM": 0.05
                     },
-                    "company":"tbZHqkMGdN",
-                    "billCompany":false,
-                    "expectedImpressions":"ifnMsscfoe"
-                },
-                {
-                    "mediaTypes":{
-                        "display":false,
-                        "mobile":false,
-                        "videoVAST":true,
-                        "videoJS":true
-                    },
-                    "company":"oMfDwKYjwn",
-                    "billCompany":true,
-                    "expectedImpressions":"IbnncndkgK"
-                }
-            ]
-        },
-        "rates":{
-            "correct":false,
-            "corrections":{
-                "displayCPM":0.06,
-                "displayMinimum":0.06,
-                "videoJSCPM":0.06,
-                "videoJSMinimum":0.06,
-                "vastCPM":0.06,
-                "vastMinimum":0.06
-            },
-            "currencyCPM":"USD"
-        }
-    },
-    "companies":[
-        {
-            "address":{
-                "state":"pGWlPtxkbe",
-                "address1":"GSzXcMXBpZ",
-                "address2":"dHjovGYCxq",
-                "zip":"KDUyVfJDlL",
-                "city":"TQACKthhfA"
-            },
-            "name":"QZtlWdShAr",
-            "currency":"fJUlVYyqkZ",
-            "status":"QpKOubqlnM",
-            "outsideUS":false,
-            "billForVAT":true,
-            "contacts":{
-                "name":"hTBAKsoWgC",
-                "sendFax":true,
-                "sendHardCopy":true,
-                "email":"AadGwsSSto",
-                "phone":"WerVsOjFxW",
-                "fax":"sYVtgWAgwI",
-                "notes":"FDUESZyVoE",
-                "ccEmails":[
-                    "CcEmail"
+                    {
+                        "name": "Quantcast",
+                        "currency": "USD",
+                        "displayCPM": 0,
+                        "mobileCPM": 0,
+                        "vastCPM": 0.05,
+                        "vidJsCPM": 0
+                    }
                 ]
+            }
+        ],
+        "prefs": [
+            {
+                "name": "iCrossing",
+                "status": "Agency",
+                "contact": {
+                    "name": "Jason Jones",
+                    "email": "billing @digitas.com",
+                    "phone": "Tel: (212) 457-2345",
+                    "fax": "Fax: (212) 457-1435"
+                },
+                "address":{
+                    "name": "Digitas Inc",
+                    "state":"NY",
+                    "address1":"1234 Harvey Way #343",
+                    "address2":"",
+                    "zip":"10013",
+                    "city":"New York"
+                },
+                "preferences": {
+                    "faxACopy": true,
+                    "billInUkPounds": true,
+                    "billForVat": true,
+                    "notes": "",
+                    "cc": ""
+                },
+                "refCodes": []
             },
-            "displayPO":"AlQhCnHncu",
-            "displayIO":"HgwOgFjOFk",
-            "displayRFI":"hujTpfrXOj",
-            "mobilePO":"LRzrqiejVi",
-            "mobileIO":"fKuJUbHFkC",
-            "mobileRFI":"ZhAibBwvGK",
-            "videoVASTPO":"ISaDjSAzwg",
-            "videoVASTIO":"SZkBLoMGmb",
-            "videoVASTRFI":"McXUlSJjWH",
-            "videoJSPO":"PbqBBILacF",
-            "videoJSIO":"gVcDAdWERv",
-            "videoJSRFI":"wgQSzuFkGa"
-        }
-    ],
+            {
+                "name": "iCrossing",
+                "status": "Agency",
+                "contact": {
+                    "name": "Jason Jones",
+                    "email": "billing @digitas.com",
+                    "phone": "Tel: (212) 457-2345",
+                    "fax": "Fax: (212) 457-1435"
+                },
+                "address":{
+                    "name": "Digitas Inc",
+                    "state":"NY",
+                    "address1":"1234 Harvey Way #343",
+                    "address2":"",
+                    "zip":"10013",
+                    "city":"New York"
+                },
+                "preferences": {
+                    "faxACopy": true,
+                    "billInUkPounds": true,
+                    "billForVat": true,
+                    "notes": "",
+                    "cc": ""
+                },
+                "refCodes": []
+            }
+        ],
+        "sows": [
+            {
+                "name": "Owner IQ_SOW",
+                "partner": "OwnerIQ",
+                "status": 1,
+                "statusDate": "01/23/2014"
+            },
+            {
+                "name": "Owner IQ_SOW",
+                "partner": "OwnerIQ",
+                "status": 1,
+                "statusDate": "01/23/2014"
+            },
+            {
+                "name": "Owner IQ_SOW",
+                "partner": "OwnerIQ",
+                "status": 1,
+                "statusDate": "01/23/2014"
+            }
+        ]
+    },
     "settings":{
         "language":{
             "all":false,
-            "skip":false,
             "custom":[
                 "en",
                 "es"
             ]
         },
-        "skip":false,
         "adFraud":{
-            "skip":false,
             "blockInvisibleTraffic":true,
             "blockIllegalDomains":false,
             "blockSuspiciousTraffic":true,
-            "blockAdWare":false,
-            "sambreel":false,
-            "anchorFree":false
+            "blockAdWare":false
         },
         "geo":{
-            "fileExists":false,
-            "skip":false,
             "where":[
                 "US",
                 "FR",
@@ -357,8 +375,17 @@
             ]
         },
         "risk":{
-            "skip":false,
-            "value": 5
+            "values": {
+                "adult": 500,
+                "alhohol": 500,
+                "downloads": 500,
+                "drugs": 500,
+                "hspreech": 500,
+                "offensiveLanguage": 500,
+                "violence": 500,
+                "atc": 500,
+                "rsa": 500
+            }
         },
         "sites":{
             "required":[
@@ -372,7 +399,6 @@
                 "108.60.141.178",
                 "193.168.2.2"
             ],
-            "skip":false,
             "blacklist":[
                 "108.5.141.178",
                 "108.60.141.178",
@@ -394,6 +420,17 @@
                 "108.60.141.178",
                 "108.60.141.178",
                 "193.168.2.2"
+            ],
+            "previewIPs":[
+                "108.5.141.178",
+                "108.60.141.178",
+                "193.168.2.2",
+                "108.60.141.178",
+                "108.60.141.178",
+                "193.168.2.2",
+                "108.60.141.178",
+                "108.60.141.178",
+                "193.168.2.2"
             ]
         },
         "keywords":{
@@ -403,12 +440,10 @@
                 "Dolor",
                 "sit",
                 "Amet"
-            ],
-            "skip":false
+            ]
         }
     },
     "confirmation":{
-        "notes":"Some confirmation notes",
         "confirmed":true
     }
 }

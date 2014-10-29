@@ -1,14 +1,22 @@
+
 package com.integralUI.domain;
 
-public class CampaignPartnerPeople {
-    String managerName;
-    String managerEmail;
-    String managerPhone;
-    Boolean managerAccess = new Boolean(false);
-    String billingName;
-    String billingEmail;
-    String billingPhone;
-    Boolean billingAccess = new Boolean(false);
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
+
+
+public class Persons {
+
+    private String managerName;
+    private String managerEmail;
+    private String managerPhone;
+    private Boolean managerAccess;
+    private String billingName;
+    private String billingEmail;
+    private String billingPhone;
+    private Boolean billingAccess;
+
 
     public String getManagerName() {
         return managerName;
@@ -72,5 +80,20 @@ public class CampaignPartnerPeople {
 
     public void setBillingAccess(Boolean billingAccess) {
         this.billingAccess = billingAccess;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        return EqualsBuilder.reflectionEquals(this, other);
     }
 }

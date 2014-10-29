@@ -1,70 +1,82 @@
+
 package com.integralUI.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 
 public class Campaign {
-    CampaignSetup setup;
-    CampaignProduct product;
-    List<CampaignPartner> partners = new ArrayList<CampaignPartner>();
-    CampaignBilling billing;
-    List<CampaignCompany> companies = new ArrayList<CampaignCompany>();
-    CampaignSettings settings;
-    CampaignConfirmation confirmation;
 
-    public CampaignSetup getSetup() {
+    private Setup setup;
+    private Product product;
+    private List<Partner> partners = new ArrayList<Partner>();
+    private Billing billing;
+    private Settings settings;
+    private Confirmation confirmation;
+
+    public Setup getSetup() {
         return setup;
     }
 
-    public void setSetup(CampaignSetup setup) {
+    public void setSetup(Setup setup) {
         this.setup = setup;
     }
 
-    public CampaignProduct getProduct() {
+    public Product getProduct() {
         return product;
     }
 
-    public void setProduct(CampaignProduct product) {
+    public void setProduct(Product product) {
         this.product = product;
     }
 
-    public List<CampaignPartner> getPartners() {
+    public List<Partner> getPartners() {
         return partners;
     }
 
-    public void setPartners(List<CampaignPartner> partners) {
+    public void setPartners(List<Partner> partners) {
         this.partners = partners;
     }
 
-    public CampaignBilling getBilling() {
+    public Billing getBilling() {
         return billing;
     }
 
-    public void setBilling(CampaignBilling billing) {
+    public void setBilling(Billing billing) {
         this.billing = billing;
     }
 
-    public List<CampaignCompany> getCompanies() {
-        return companies;
-    }
-
-    public void setCompanies(List<CampaignCompany> companies) {
-        this.companies = companies;
-    }
-
-    public CampaignSettings getSettings() {
+    public Settings getSettings() {
         return settings;
     }
 
-    public void setSettings(CampaignSettings settings) {
+    public void setSettings(Settings settings) {
         this.settings = settings;
     }
 
-    public CampaignConfirmation getConfirmation() {
+    public Confirmation getConfirmation() {
         return confirmation;
     }
 
-    public void setConfirmation(CampaignConfirmation confirmation) {
+    public void setConfirmation(Confirmation confirmation) {
         this.confirmation = confirmation;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        return EqualsBuilder.reflectionEquals(this, other);
     }
 }

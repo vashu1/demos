@@ -1,22 +1,17 @@
+
 package com.integralUI.domain;
 
-public class CampaignSettingsAdFraud {
-    Boolean skip = new Boolean(false);
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
 
-    Boolean blockInvisibleTraffic = new Boolean(false);
-    Boolean blockIllegalDomains = new Boolean(false);
-    Boolean blockSuspiciousTraffic = new Boolean(false);
-    Boolean blockAdWare = new Boolean(false);
-    Boolean sambreel = new Boolean(false);
-    Boolean anchorFree = new Boolean(false);
 
-    public Boolean getSkip() {
-        return skip;
-    }
+public class AdFraud {
 
-    public void setSkip(Boolean skip) {
-        this.skip = skip;
-    }
+    private Boolean blockInvisibleTraffic;
+    private Boolean blockIllegalDomains;
+    private Boolean blockSuspiciousTraffic;
+    private Boolean blockAdWare;
 
     public Boolean getBlockInvisibleTraffic() {
         return blockInvisibleTraffic;
@@ -50,19 +45,18 @@ public class CampaignSettingsAdFraud {
         this.blockAdWare = blockAdWare;
     }
 
-    public Boolean getSambreel() {
-        return sambreel;
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
     }
 
-    public void setSambreel(Boolean sambreel) {
-        this.sambreel = sambreel;
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
-    public Boolean getAnchorFree() {
-        return anchorFree;
-    }
-
-    public void setAnchorFree(Boolean anchorFree) {
-        this.anchorFree = anchorFree;
+    @Override
+    public boolean equals(Object other) {
+        return EqualsBuilder.reflectionEquals(this, other);
     }
 }
