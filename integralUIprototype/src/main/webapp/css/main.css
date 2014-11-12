@@ -149,6 +149,7 @@ textarea {
     position: absolute;
     right: 0;
     top: 100%;
+    z-index: 333;
     background: #fff;
     padding: 10px 5px;
     border: 1px solid #ccc;

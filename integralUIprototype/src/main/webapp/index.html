@@ -51,21 +51,21 @@
             <div class="pds-actions">
 
                 <ul class="content-menu">
-                    <li><span>Make Changes</span>
-                        <ul>
-                            <li><a href="">Add Partner</a></li>
-                            <li><a href="">Change Product</a></li>
-                            <li><a href="">Change Rates</a></li>
-                            <li><a href="">Update Billing Contact</a></li>
-                        </ul>
-                    </li>
                     <li><span>Actions</span>
                         <ul>
-                            <li><a href="">Delete/Cancel</a></li>
-                            <li><a href="">New Program</a></li>
+                            <li><a href="">Flag</a></li>
+                            <li><a href="">Delete</a></li>
                             <li><a href="">Clone</a></li>
-                            <li><a href="">Share</a></li>
-                            <li><a href="">Flag for Attention</a></li>
+                        </ul>
+                    </li>
+                    <li><span>Update Campaign</span>
+                        <ul>
+                            <li><a href="">Basic Information</a></li>
+                            <li><a href="">Partners</a></li>
+                            <li><a href="">Products</a></li>
+                            <li><a href="">Billing Schedule</a></li>
+                            <li><a href="">Billing Contacts</a></li>
+                            <li><a href="">Settings</a></li>
                         </ul>
                     </li>
                     <li>Live</li>
@@ -73,15 +73,15 @@
             </div>
 
             <h1 class="pds-title">
-                <span class="pds-title-text"><%= setup.agency %></span> <span class="spacer">&rarr;</span>
-                <span class="pds-title-text"><%= setup.brand %></span> <span class="spacer">&rarr;</span>
-                <%= setup.name %> Campaign
-                <span class="count">(17264-9)</span></h1>
+                <span class="pds-title-text"><%= setup.agency.name %></span> <span class="spacer">&rarr;</span>
+                <span class="pds-title-text"><%= setup.brandName %></span> <span class="spacer">&rarr;</span>
+                <%= setup.campaign.name %> Campaign
+                <span class="count">(<%= setup.campaign.id %>)</span></h1>
 
             <div class="pds-aside pds-leftside">
 
                 <div class="box">
-                    <h4 class="box-title">Unilever_Axe_Fall Campaign <span class="count">(17264-9)</span></h4>
+                    <h4 class="box-title"><%= setup.campaign.name %> Campaign <span class="count">(<%= setup.campaign.id %>)</span></h4>
 
                     <div class="x-notify x-notify-alert">
                         <div class="x-notify-body">
@@ -119,23 +119,23 @@
                             <tr>
                                 <td colspan="4">
                                     <small>Team Name</small><br>
-                                    <a href="">Digitas-Unilever 2015</a>
+                                    <a href=""><%= setup.temaName %></a>
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="2">
                                     <small>Agency</small><br>
-                                    <a href=""><%= setup.agency %></a>
+                                    <a href=""><%= setup.agency.name %></a>
                                 </td>
                                 <td colspan="2">
                                     <small>Brand/Advertiser</small><br>
-                                    <a href=""><%= setup.brand %></a>
+                                    <a href=""><%= setup.brandName %></a>
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="2">
                                     <small>Ad Server</small><br>
-                                    <%= setup.adserver %>
+                                    <%= setup.adServer %>
                                 </td>
                                 <td colspan="2">
                                     <small>Expected Impressions</small><br>
@@ -145,23 +145,23 @@
                             <tr>
                                 <td colspan="2">
                                     <small>Sales Lead</small><br>
-                                    <a href="">Aaron Stettner</a>
+                                    <a href="<%= setup.sales.leadEmail %>"><%= setup.sales.leadName %></a>
                                 </td>
                                 <td colspan="2">
                                     <small>Sales Office</small><br>
-                                    Chicago
+                                    <%= setup.sales.office %>
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="4">
                                     <small>Client Services Rep</small><br>
-                                    <a href="">Laura Macaluso</a>
+                                    <a href="mailto:<%= setup.csr.email %>"><%= setup.csr.name %></a>
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="4">
                                     <small>Agency Contact</small><br>
-                                    <a href="mailto:<%= setup.createdByEmail %>"><%= setup.createdByName %></a>
+                                    <a href="mailto:<%= setup.agency.contectEmail %>"><%= setup.agency.contactName %></a>
                                 </td>
                             </tr>
                         </table>

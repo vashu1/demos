@@ -1,6 +1,6 @@
 // backbone example
 var CampaignDetailsModel = Backbone.Model.extend({
-    urlRoot: '/home/campaigns/12345/campaign-details/rest/campaign/list',
+    urlRoot: '/rest/campaign/list',
 
     initialize: function () {
         console.log('Campaing Details Model has been created');
