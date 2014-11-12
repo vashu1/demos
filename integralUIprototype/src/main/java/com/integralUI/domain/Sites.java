@@ -10,6 +10,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 public class Sites {
 
+    Boolean skip = false;
     private List<String> required = new ArrayList<String>();
     private List<String> blacklist = new ArrayList<String>();
     private List<String> whitelist = new ArrayList<String>();
@@ -61,5 +62,13 @@ public class Sites {
     @Override
     public boolean equals(Object other) {
         return EqualsBuilder.reflectionEquals(this, other);
+    }
+
+    public Boolean getSkip() {
+        return skip;
+    }
+
+    public void setSkip(Boolean skip) {
+        this.skip = skip;
     }
 }
