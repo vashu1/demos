@@ -180,7 +180,7 @@ textarea {
 
 .x-notify {
     margin: 10px 0;
-    padding: 20px 20px 20px 35px;
+    padding: 20px;
     background: #f6f6f6;
     border-radius: 5px;
     overflow: hidden;
@@ -724,13 +724,18 @@ textarea {
 }
 
 .pds-aside {
-    width: 30%;
-    margin: 0 0 0 20px;
+    width: 25%;
     box-sizing: border-box;
 }
 
 .pds-rightside {
     float: right;
+    margin: 0 0 0 20px;
+}
+
+.pds-leftside {
+    float: left;
+    margin: 0 20px 0 0;
 }
 
 .pds-content {
@@ -787,45 +792,6 @@ textarea {
 
 .pds-aside .box-title .count {
     color: #000;
-}
-
-.pds-aside .campaign-item {
-    padding: 10px;
-    border-top: 1px solid #eee;
-    transition: .3s;
-    overflow: hidden;
-}
-
-.pds-aside .campaign-item:first-child,
-.pds-aside .recent-item:first-child,
-.pds-aside .info-item:first-child {
-    border-top: 0;
-}
-
-.pds-aside .campaign-item:hover {
-    background: #f6f6f6;
-}
-
-.pds-aside .campaign-item.approved:hover {
-    background: #dbf6e0;
-}
-
-.pds-aside .campaign-item.denied:hover {
-    background: #ffebdf;
-}
-
-.pds-aside .campaign-item .date {
-    float: right;
-    margin-top: 3px;
-    color: #999999;
-    font-size: .8em;
-}
-
-.pds-aside .recent-item {
-    padding: 10px;
-    border-top: 1px solid #eee;
-    transition: .3s;
-    overflow: hidden;
 }
 
 .pds-title {

@@ -68,6 +68,7 @@
                             <li><a href="">Flag for Attention</a></li>
                         </ul>
                     </li>
+                    <li>Live</li>
                 </ul>
             </div>
 
@@ -77,94 +78,99 @@
                 <%= setup.name %> Campaign
                 <span class="count">(17264-9)</span></h1>
 
-            <div class="pds-aside pds-rightside">
+            <div class="pds-aside pds-leftside">
+
                 <div class="box">
-                    <h4 class="box-title">Campaign Alerts <span class="count">( <a href="">32</a> )</span></h4>
+                    <h4 class="box-title">Unilever_Axe_Fall Campaign <span class="count">(17264-9)</span></h4>
 
-                    <div class="box-wrapper">
-                        <div class="campaign-item denied">
-                            <span class="date">02/12/2014 3:34PM</span> <a href="">Project Denied</a>
-                        </div>
+                    <div class="x-notify x-notify-alert">
+                        <div class="x-notify-body">
+                            <p><strong>Campaign is going live in 3 days.</strong></p>
 
-                        <div class="campaign-item approved">
-                            <span class="date">02/12/2014 3:34PM</span> <a href="">Project Approved</a>
-                        </div>
+                            <p>This campaign needs approval</p>
 
-                        <div class="campaign-item approved">
-                            <span class="date">02/12/2014 3:34PM</span> <a href="">SOW Approved</a>
-                        </div>
+                            <p><strong>Flagged</strong> by you on 10/22/2014</p>
 
-                        <div class="campaign-item approved">
-                            <span class="date">02/12/2014 3:34PM</span> <a href="">SOW Approved</a>
-                        </div>
+                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.</p>
 
-                        <div class="campaign-item approved">
-                            <span class="date">02/12/2014 3:34PM</span> <a href="">Project Approved</a>
+                            <p>Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio."</p>
+
+                            <p style="text-align: center; line-height: 160%;"><a href="">Resolve</a><br><a href="">Hide Alert</a></p>
                         </div>
                     </div>
-                </div>
 
-                <div class="box">
-                    <h4 class="box-title">Recent Changes <span class="count">( <a href="">6</a> )</span></h4>
-
-                    <div class="box-wrapper">
-                        <div class="recent-item">
-                            Someone did this 1 days ago
-                        </div>
-
-                        <div class="recent-item">
-                            Someone did this 3 days ago
-                        </div>
-
-                        <div class="recent-item">
-                            Someone did this 4 days ago
-                        </div>
-
-                        <div class="recent-item">
-                            Someone did this 5 days ago
-                        </div>
-
-                        <div class="recent-item">
-                            Someone did this 48 days ago
-                        </div>
+                    <div class="">
+                        <table class="pds-info">
+                            <col width="15%"/>
+                            <col width="42%"/>
+                            <col width="33%"/>
+                            <col width="10%"/>
+                            <td colspan="4">
+                                <small>Notes</small><br>
+                                This campaign might be extended per agency's email. - 109/31/2014 (Brady)<br>
+                                Campaign needs to change flight date. Please update immediately. Flagged this campaign - 11/21/2014  (Jane)
+                            </td>
+                            <tr>
+                                <td colspan="4">
+                                    <small>Flight Dates</small><br>
+                                    <%= setup.dateStart %> - <%= setup.dateEnd %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <small>Team Name</small><br>
+                                    <a href="">Digitas-Unilever 2015</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <small>Agency</small><br>
+                                    <a href=""><%= setup.agency %></a>
+                                </td>
+                                <td colspan="2">
+                                    <small>Brand/Advertiser</small><br>
+                                    <a href=""><%= setup.brand %></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <small>Ad Server</small><br>
+                                    <%= setup.adserver %>
+                                </td>
+                                <td colspan="2">
+                                    <small>Expected Impressions</small><br>
+                                    <%= setup.excepted %> 100,000,000
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <small>Sales Lead</small><br>
+                                    <a href="">Aaron Stettner</a>
+                                </td>
+                                <td colspan="2">
+                                    <small>Sales Office</small><br>
+                                    Chicago
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <small>Client Services Rep</small><br>
+                                    <a href="">Laura Macaluso</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <small>Agency Contact</small><br>
+                                    <a href="mailto:<%= setup.createdByEmail %>"><%= setup.createdByName %></a>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
 
             <div class="pds-content">
                 <div class="pds-output">
-                    <h2 class="pds-output-title">Status Notifications</h2>
-
-                    <div class="output-wrapper">
-                        <div class="x-notify x-notify-default">
-                            <div class="x-notify-body">
-                                <p>Campaign approved on 10/23/2014 by Joe Schmoe</p>
-
-                                <p>Media Partner A has not signed an SOW<b></b>
-                                Media Partner B does not have tags</p>
-                            </div>
-                        </div>
-
-                        <div class="x-notify x-notify-alert">
-                            <div class="x-notify-nav">
-                                <a class="x-button" href="">Reject</a>
-                                <a class="x-button" href="">Approve</a>
-                            </div>
-                            
-                            <div class="x-notify-body">
-                                <p><strong>Flagged</strong> by you on 10/22/2014 <a href="">Resolve</a><br>
-                                "Client has requested we expedite this campaign"</p>
-
-                                <p><strong>Campaign is going live in 3 days.</strong><br>
-                                This campaign needs approval</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pds-output">
-                    <h2 class="pds-output-title">Details</h2>
-
                     <div class="output-wrapper">
                         <div class="x-tabs pds-tabs">
                         <div id="pdssowtabs">
@@ -172,105 +178,9 @@
                                 <li><a href="#pdssowtabs-1">Products and Partners</a></li>
                                 <li><a href="#pdssowtabs-2">Billing</a></li>
                                 <li><a href="#pdssowtabs-3">Settings</a></li>
-                                <li><a href="#pdssowtabs-4">Tags</a></li>
-                                <li><a href="#pdssowtabs-5">Campaign History</a></li>
+                                <li><a href="#pdssowtabs-4">Tags (5)</a></li>
                             </ul>
                             <div id="pdssowtabs-1">
-                                <h3 class="pds-subtitle"><span class="spacer">&rarr;</span> Basic Info</h3>
-
-                                <table class="pds-info">
-                                    <col width="15%"/>
-                                    <col width="42%"/>
-                                    <col width="33%"/>
-                                    <col width="10%"/>
-                                    <tr>
-                                        <td>
-                                            <small>Campaign ID</small><br>
-                                            1726-9
-                                        </td>
-                                        <td>
-                                            <small>Campaign Name</small><br>
-                                            <%= setup.name %>
-                                        </td>
-                                        <td>
-                                            <small>Flight Dates</small><br>
-                                            <%= setup.dateStart %> - <%= setup.dateEnd %>
-                                        </td>
-                                        <td>
-                                            <small>Status</small><br>
-                                            Live
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4">
-                                            <small>Description:</small><br>
-                                            N/A
-                                        </td>
-                                    </tr>
-                                </table>
-
-                                <table class="pds-info">
-                                    <col width="20%"/>
-                                    <col width="20%"/>
-                                    <col width="20%"/>
-                                    <col width="20%"/>
-                                    <col width="20%"/>
-                                    <tr>
-                                        <td>
-                                            <small>Team Name</small><br>
-                                            <a href="">Digitas-Unilever 2015</a>
-                                        </td>
-                                        <td>
-                                            <small>Agency</small><br>
-                                            <a href=""><%= setup.agency %></a>
-                                        </td>
-                                        <td>
-                                            <small>Brand/Advertiser</small><br>
-                                            <a href=""><%= setup.brand %></a>
-                                        </td>
-                                        <td>
-                                            <small>Ad Server</small><br>
-                                            <%= setup.adserver %>
-                                        </td>
-                                        <td>
-                                            <small>Expected Impressions</small><br>
-                                            <%= setup.excepted %>
-                                        </td>
-                                    </tr>
-                                </table>
-
-                                <table class="pds-info noborder">
-                                    <col width="25%"/>
-                                    <col width="25%"/>
-                                    <col width="25%"/>
-                                    <col width="25%"/>
-                                    <tr>
-                                        <td>
-                                            <small>Agency Contact</small><br>
-                                            <a href="mailto:<%= setup.createdByEmail %>"><%= setup.createdByName %></a>
-                                        </td>
-                                        <td>
-                                            <small>Sales Lead</small><br>
-                                            <a href="">Aaron Stettner</a>
-                                        </td>
-                                        <td>
-                                            <small>Sales Office</small><br>
-                                            Chicago
-                                        </td>
-                                        <td>
-                                            <small>Client Services Rep</small><br>
-                                            <a href="">Laura Macaluso</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4">
-                                            <small>Notes</small><br>
-                                            This campaign might be extended per agency's email. - 109/31/2014 (Brady)<br>
-                                            Campaign needs to change flight date. Please update immediately. Flagged this campaign - 11/21/2014  (Jane)
-                                        </td>
-                                    </tr>
-                                </table>
-
                                 <h3 class="pds-subtitle"><span class="spacer">&rarr;</span> Media Types and Products</h3>
 
                                 <table class="pds-info noborder">
@@ -279,7 +189,7 @@
                                     <tr>
                                         <td>
                                             <small>Media Types</small><br>
-                                            sdasd
+                                            Video
                                         </td>
                                         <td>
                                             <small>Product Package</small><br>
@@ -795,13 +705,13 @@
                                     <col width="33%"/>
                                     <col width="33%"/>
                                     <tr>
-                                        <td colspan="2">
+                                        <td colspan="3">
                                             <fieldset>
                                                 <legend>Brand Safety Risk Thresholds</legend>
                                                 <div class="box-wrapper">
                                                     <table class="pds-risk">
-                                                        <col width="37%"/>
-                                                        <col width="63%"/>
+                                                        <col width="27%"/>
+                                                        <col width="73%"/>
                                                         <tr>
                                                             <td class="label">Adult <span class="count">(<span id="amount-adult">500</span>)</span></td>
                                                             <td>
@@ -890,7 +800,9 @@
                                                 </div>
                                             </fieldset>
                                         </td>
-                                        <td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
                                             <fieldset>
                                                 <legend>Geo Compliance</legend>
                                                 <div class="box-wrapper">
@@ -901,9 +813,8 @@
                                                     </ul>
                                                 </div>
                                             </fieldset>
-
-                                            <div class="x-spacer"></div>
-
+                                        </td>
+                                        <td>
                                             <fieldset>
                                                 <legend>Language Targeting</legend>
                                                 <div class="box-wrapper">
@@ -914,30 +825,6 @@
                                                 </div>
                                             </fieldset>
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3" class="pds-keywords-title">Keyword Settings:</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">
-                                            <fieldset>
-                                                <legend>Keyword Segment</legend>
-                                                <div class="box-wrapper">
-                                                    <textarea name="" id="" cols="" rows="" placeholder="Please Enter Keywords..."><% _.each(settings.keywords.list, function(key) { %><%= key + ', ' %><% }); %></textarea>
-                                                </div>
-                                            </fieldset>
-                                        </td>
-                                        <td>
-                                            <fieldset>
-                                                <legend>Preview IP Address List</legend>
-                                                <div class="box-wrapper">
-
-                                                    <textarea name="" id="" cols="" rows="" placeholder="Please Enter IP(s)..."><% _.each(settings.sites.blacklist, function(key) { %><%= key %>
-<% }); %></textarea>
-                                                </div>
-                                            </fieldset>
-                                        </td>
-                                    </tr>
                                     <tr>
                                         <td colspan="3" class="pds-keywords-title">Custom Lists:</td>
                                     </tr>
@@ -970,12 +857,22 @@
                                             </fieldset>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td colspan="3" class="pds-keywords-title">Keyword Settings:</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <fieldset>
+                                                <legend>Keyword List</legend>
+                                                <div class="box-wrapper">
+                                                    <textarea name="" id="" cols="" rows="" placeholder="Please Enter Keywords..."><% _.each(settings.keywords.list, function(key) { %><%= key + ', ' %><% }); %></textarea>
+                                                </div>
+                                            </fieldset>
+                                        </td>
+                                    </tr>
                                 </table>
                             </div>
                             <div id="pdssowtabs-4">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci amet culpa eius, incidunt laudantium maxime modi molestiae necessitatibus omnis provident qui sunt suscipit? Alias aliquid amet assumenda atque culpa ea est et eum fugiat laboriosam molestias nam natus neque nesciunt, nisi omnis pariatur quaerat quia quidem reprehenderit vero voluptas!</p>
-                            </div>
-                            <div id="pdssowtabs-5">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci amet culpa eius, incidunt laudantium maxime modi molestiae necessitatibus omnis provident qui sunt suscipit? Alias aliquid amet assumenda atque culpa ea est et eum fugiat laboriosam molestias nam natus neque nesciunt, nisi omnis pariatur quaerat quia quidem reprehenderit vero voluptas!</p>
                             </div>
                         </div>
