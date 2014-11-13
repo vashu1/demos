@@ -1,6 +1,6 @@
 // backbone example
 var CampaignDetailsModel = Backbone.Model.extend({
-    urlRoot: '/rest/campaign/list',
+    urlRoot: '/home/campaings/12345/details/rest/campaign/list',
 
     initialize: function () {
         console.log('Campaing Details Model has been created');
@@ -158,6 +158,18 @@ var CampaingDetailView = Backbone.View.extend({
 
                 $('.pds-sow .toggle').on('click', function () {
                     $(this).closest('tr').toggleClass('active');
+                });
+
+                $('.x-flyout').on('click', function () {
+                    if ($(this).hasClass('active')) {
+                        $('.x-flyout-wrapper', this).hide('fast');
+                        $(this).removeClass('active');
+                    } else {
+                        $('.x-flyout').removeClass('active');
+                        $('.x-flyout-wrapper').hide();
+                        $(this).addClass('active');
+                        $('.x-flyout-wrapper', this).show('fast');
+                    }
                 });
                 // end of hardcode
 

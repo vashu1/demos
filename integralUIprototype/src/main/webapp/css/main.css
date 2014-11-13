@@ -115,6 +115,11 @@ body {
 }
 
 /* ui */
+b, strong {
+    font-family: 'PT Sans Bold', Arial, sans-serif;
+    font-weight: normal;
+}
+
 textarea {
     font-family: 'PT Sans Regular', Arial, sans-serif;
     font-size: 1em;
@@ -193,10 +198,6 @@ textarea {
 
 .x-notify-alert {
     background: #ffebdf;
-}
-
-.x-notify-alert strong {
-    font-family: 'PT Sans Bold', Arial, sans-serif;
 }
 
 .x-notify-body {
@@ -328,6 +329,55 @@ textarea {
     padding: 0;
 }
 
+.x-flyout {
+    position: relative;
+    cursor: pointer;
+    border-radius: 2px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 5px 1px 5px;
+    background: #9cdbff;
+    transition: .3s;
+}
+
+.x-flyout.active {
+    color: #ffffff;
+}
+
+.x-flyout-wrapper {
+    display: none;
+    left: 100%;
+    top: 100%;
+    position: absolute;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    white-space: nowrap;
+    color: #000000;
+    z-index: 333;
+}
+
+.x-flyout-wrapper ul {
+    margin: 10px 15px 0 0;
+}
+
+.x-flyout-wrapper ul:only-child {
+    margin: 0;
+}
+
+.x-flyout-wrapper li {
+    list-style: disc inside;
+}
+
+.x-flyout-wrapper p {
+    margin: 10px 0 0 0;
+}
+
+.x-flyout-wrapper p:first-child {
+    margin: 0;
+}
+
 .x-tabs .ui-tabs p {
     margin: 20px 0;
     padding: 0 10px;
@@ -362,7 +412,6 @@ textarea {
 
 .header .nav {
     float: left;
-    overflow: hidden;
 }
 
 .header .nav li {
@@ -372,6 +421,10 @@ textarea {
 }
 .header .nav li:first-child {
     padding-left: 0;
+}
+
+.header .nav li:first-child img {
+    margin: -10px 0 -10px 0;
 }
 
 .header-search {
@@ -798,6 +851,10 @@ textarea {
 .pds-title {
     font-size: 2em;
     margin-bottom: 20px;
+}
+
+.pds-title-logo {
+    margin: 0 5px -8px 0;
 }
 
 .pds-title .count {
