@@ -85,11 +85,11 @@
                 <div class="box">
                     <h4 class="box-title"><%= setup.campaign.name %> Campaign <span class="count">(<%= setup.campaign.id %>)</span></h4>
 
-                    <div class="x-notify x-notify-alert">
+                    <div class="x-notify x-notify-alert" style="display: none;">
                         <div class="x-notify-body">
                             <p><strong>Campaign is going live in 3 days.</strong></p>
 
-                            <p>This  campaign needs approval</p>
+                            <p>Thiscampaign needs approval</p>
 
                             <p><strong>Flagged</strong> by you on 10/22/2014</p>
 
@@ -108,13 +108,13 @@
                             <col width="33%"/>
                             <col width="10%"/>
                             <td colspan="4">
-                                <small>Notes</small><br>
+                                <small>Note</small><br>
                                 This campaign might be extended per agency's email. - 109/31/2014 (Brady)<br>
                                 Campaign needs to change flight date. Please update immediately. Flagged this campaign - 11/21/2014  (Jane)
                             </td>
                             <tr>
                                 <td colspan="4">
-                                    <small>Flight Dates</small><br>
+                                    <small>Dates</small><br>
                                     <%= setup.dateStart %> - <%= setup.dateEnd %>
                                 </td>
                             </tr>
@@ -199,7 +199,7 @@
                             <tr>
                                 <td colspan="2">
                                     <small>Sales Lead</small><br>
-                                    <%= setup.sales.leadName %>
+                                    <a href=""><%= setup.sales.leadName %></a>
                                     <div class="x-flyout">&raquo;
                                         <div class="x-flyout-wrapper">
                                             <p><strong>Digitas</strong><br>
@@ -222,7 +222,7 @@
                             <tr>
                                 <td colspan="4">
                                     <small>Client Services Rep</small><br>
-                                    <%= setup.csr.name %>
+                                    <a href=""><%= setup.csr.name %></a>
                                     <div class="x-flyout">&raquo;
                                         <div class="x-flyout-wrapper">
                                             <p><strong>Digitas</strong><br>
@@ -240,7 +240,7 @@
                             <tr>
                                 <td colspan="4">
                                     <small>Agency Contact</small><br>
-                                    <%= setup.agency.contactName %>
+                                    <a href=""><%= setup.agency.contactName %></a>
                                     <div class="x-flyout">&raquo;
                                         <div class="x-flyout-wrapper">
                                             <p><strong>Digitas</strong><br>
